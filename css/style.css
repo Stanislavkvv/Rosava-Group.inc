@@ -1,0 +1,15 @@
+:root {
+    --color-1: #011822;
+    --color-2: #fcde58 ;
+    --color-3: #ffffff;
+}
+
+
+
+
+
+.hello .container {
+    background-image: url("../img/title.png");
+    background-size: cover;
+    min-height: 100vh;
+}
