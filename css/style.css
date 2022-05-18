@@ -1,15 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;700&display=swap');
 :root {
     --color-1: #011822;
     --color-2: #fcde58 ;
     --color-3: #ffffff;
+
+    --font-1: 'Work Sans', sans-serif;
 }
 
+body{
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
 
+main{
+    flex: 1 1 auto;
+}
 
+header{
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    z-index: 100;
+    font-family: var(--font-1);
+}
+header nav.head{
+    background-color: var(--color-3);
+    padding: .5rem;
+}
+header nav.head .container{
+    display: flex;
+    justify-content: space-between;
+}
+header nav.head .container .logo img{
+    width: 10rem;
+}
+header nav.head .container ul.contacts{
+    display: flex;
+    margin: 0;
+}
+header nav.head .container ul.contacts li:first-child{
+    margin-left: 0;
+}
+header nav.head .container ul.contacts li{
+    display: flex;
+    align-items: center;
+    margin-left: 5rem;
+}
+header nav.head .container ul.contacts li ul.media{
+    display: flex;
+    padding: 0;
+}
+header nav.head .container ul.contacts li ul.media li{
+    margin-left: .5rem;
+}
+header nav.head .container ul.contacts li a{
+    text-decoration: none;
+    color: var(--color-1);
+    transition: all .4s ease;
+}
+header nav.head .container ul.contacts li a:hover{
+    transform: translate(.2rem,-.2rem) ;
+}
+header nav.head .container ul.contacts li img{
+    width: 2rem;
+    margin-right: .5rem;
+}
+header nav.body{
+    background-color: var(--color-1);
+    top: 0;
+    width: 100%;
+}
+header nav.body .container ul{
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+header nav.body .container ul li{
+    flex: 1 1 auto;
+    display: flex;
+    justify-content: center;
+}
+header nav.body .container ul li:first-child a{
+    border-left: 1px solid var(--color-3);
+}
+header nav.body .container ul li a{
+    width: 100%;
+    margin: .5rem 0;
+    padding: .3rem;
+    border-right: 1px solid var(--color-3);
+    text-align: center;
+    text-decoration: none;
+    color: var(--color-3);
+    position: relative;
+    overflow: hidden;
+}
+header nav.body .container ul li a:before,
+header nav.body .container ul li a:after{
+    position: absolute;
+    content: "";
+    height: 1px;
+    background-color: var(--color-3);
+    width: 100%;
+    transition: all .7s ease;
+}
+header nav.body .container ul li a:before{
+    left: -100%;
+    top: 0;
+}
+header nav.body .container ul li a:after{
+    right: -100%;
+    bottom: 0;
+}
+header nav.body .container ul li a:hover:before{
+    left: 0;
+}
+header nav.body .container ul li a:hover:after{
+    right: 0;
+}
 
-
-.hello .container {
+section.hello{
     background-image: url("../img/title.png");
     background-size: cover;
-    min-height: 100vh;
+    background-position: 50% 20%;
+    min-height: 80vh;
+    display: flex;
+}
+section.hello .container{
+    color: var(--color-3);
+    font-family: var(--font-1);
+    flex: 1 1 auto;
+}
+section.hello .container h1{
+    font-size: 4.5rem;
+    text-align: center;
+    font-weight: 200;
+}
+section.hello .container h1 span.green{
+    color: var(--color-1);
+}
+section.hello .container h1 span.yellow{
+    color: var(--color-2);
+}
+section.hello .container h2{
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 200;
+    margin-top: 1rem;
+}
+
+section.about{
+    background: rgb(240,240,240);
+    background: linear-gradient(0deg, rgba(240,240,240,1) 0%, rgba(255,255,255,1) 100%);
+}
+section.about .container{
+    padding: 3rem 0;
+}
+section.about .container .title{
+    font-size: 2rem;
+    color: var(--color-1);
+}
+section.about .container .about__block{
+    display: flex;
+}
+section.about .container .about__block .info,
+section.about .container .about__block .photo{
+    flex: 1;
+}
+section.about .container .about__block .info{
+    padding-top: 1rem;
+}
+section.about .container .about__block .info p{
+    font-weight: 200;
+    font-size: 1.2rem;
+}
+section.about .container .about__block .photo{
+    text-align: center;
+}
+section.about .container .about__block .photo img{
+    width: 30rem;
 }
