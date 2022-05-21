@@ -4,7 +4,8 @@
     --color-1: #011822;
     --color-2: #fcde58 ;
     --color-3: #ffffff;
-    --color-4: #af9d9d;
+    --color-4: #251D3A;
+    --color-5: #f4d757;
    
     --font-1: 'Work Sans', sans-serif;
     --font-2: 'Koulen', cursive;
@@ -64,7 +65,7 @@ header nav.head .container ul.contacts li a{
     transition: all .4s ease;
 }
 header nav.head .container ul.contacts li a:hover{
-    transform: translate(.2rem,-.2rem) ;
+    transform: translate(.2rem,-.2rem);
 }
 header nav.head .container ul.contacts li img{
     width: 2rem;
@@ -185,4 +186,112 @@ section.about .container .about__block .photo{
 }
 section.about .container .about__block .photo img{
     width: 30rem;
+}
+
+footer nav.downMenu .container,
+footer .copyRight .container{
+    padding: 1rem;
+    color: var(--color-3);
+}
+footer nav.downMenu{
+    background-color: var(--color-4);
+}
+footer nav.downMenu .container{
+    display: flex;
+}
+footer nav.downMenu .links,
+footer nav.downMenu .contacts{
+    flex: 1;
+}
+footer nav.downMenu .logo{
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
+footer nav.downMenu .title{
+    text-align: center;
+    border-radius: 0 0 10px 10px;
+    border-bottom: 1px solid var(--color-3);
+    padding-bottom: .5rem;
+}
+footer nav.downMenu .links ul,
+footer nav.downMenu .contacts ul{
+    border-radius: 10px 10px 0 0;
+    border-top: 1px solid var(--color-3);
+    padding-top: 1rem;
+}
+footer nav.downMenu .links ul li,
+footer nav.downMenu .contacts ul li{
+    display: flex;
+    position: relative;
+    font-family: var(--font-1);
+    font-size: 1.2rem;
+}
+footer nav.downMenu .links ul li:before{
+    content: "";
+    position: absolute;
+    /* transition: all .7s ease; */
+    left: -1.4rem;
+    top: 35%;
+    border-radius: 50%;
+    height: .5rem;
+    width: .5rem;
+    border: .25rem solid var(--color-3);
+}
+footer nav.downMenu .links ul li:hover a{
+    padding-left: .5rem;
+}
+footer nav.downMenu .links ul li:hover:before{
+    border-radius: 0;
+    height: 1rem;
+    width: 1rem;
+    background: none;
+    border: .5rem solid transparent;
+    border-left: .5rem solid var(--color-3);
+    top: 25%;
+}
+footer nav.downMenu .links ul li a,
+footer nav.downMenu .contacts ul li a{
+    flex: 1 1 auto;
+    text-decoration: none;
+    color: var(--color-3);
+    transition: all .7s ease;
+    font-weight: 300;
+}
+footer nav.downMenu .contacts ul{
+    padding: 0 .5rem;
+}
+footer nav.downMenu .contacts ul li{
+    margin-top: 1rem;
+    display: flex;
+    align-items:flex-start;
+    font-weight: 300;
+}
+footer nav.downMenu .contacts ul li a:hover{
+    transform: translate(.5rem,0);
+}
+footer nav.downMenu .contacts ul li img{
+    margin-right: .5rem;
+    width: 2rem;
+}
+footer nav.downMenu .logo a{
+    flex: 1 1 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+footer nav.downMenu .logo p{
+    margin: 1rem 0 0;
+    text-align: center;
+}
+footer .copyRight{
+    background-color: var(--color-5);
+}
+footer .copyRight p{
+    margin: 0;
+    font-family: var(--font-1);
+    text-align: center;
+    font-weight: 500;
+    color: var(--color-4);
 }
