@@ -74,7 +74,7 @@
             </div>
         </div>
     </section>
-    <section class="applyToDrive">
+    <section class="applyToDrive" id="applyToDrive">
         <div class="container">
             <div class="applyToDrive__form">
                 <h2>APPLY TO DRIVE FOR ROSAVA GROUP!</h2>

@@ -413,7 +413,8 @@ section.services .container .services__service:last-child h4{
 }
 
 section.applyToDrive{
-    margin: 2rem 0 5rem;
+    margin: 0 0 5rem;
+    padding-top: 3rem;
 }
 section.applyToDrive .container{
     display: flex;
