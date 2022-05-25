@@ -26,73 +26,73 @@ main{
 
 header{
     display: flex;
-    flex-direction: column;
     overflow: hidden;
     z-index: 100;
     font-family: var(--font-1);
 }
-header nav.head{
+header.head{
     background-color: #251D3A;
     padding: .5rem;
 }
-header nav.head .container{
+header.head .container{
     display: flex;
     justify-content: space-between;
 }
-header nav.head .container .logo img{
+header.head .container .logo img{
     width: 10rem;
 }
-header nav.head .container ul.contacts{
+header.head .container ul.contacts{
     display: flex;
     margin: 0;
 }
-header nav.head .container ul.contacts li:first-child{
+header.head .container ul.contacts li:first-child{
     margin-left: 0;
 }
-header nav.head .container ul.contacts li{
+header.head .container ul.contacts li{
     display: flex;
     align-items: center;
     margin-left: 5rem;
     color: var(--color-3);  
 }
-header nav.head .container ul.contacts li ul.media{
+header.head .container ul.contacts li ul.media{
     display: flex;
     padding: 0;
 }
-header nav.head .container ul.contacts li ul.media li{
+header.head .container ul.contacts li ul.media li{
     margin-left: .5rem;
 }
-header nav.head .container ul.contacts li a{
+header.head .container ul.contacts li a{
     text-decoration: none;
     color: var(--color-3);
     transition: all .4s ease;
 }
-header nav.head .container ul.contacts li a:hover{
+header.head .container ul.contacts li a:hover{
     transform: translate(.2rem,-.2rem);
 }
-header nav.head .container ul.contacts li img{
+header.head .container ul.contacts li img{
     width: 2rem;
     margin-right: .5rem;
 }
-header nav.body{
+header.body{
     background-color: var(--color-1);
     top: 0;
+    position: sticky;
     width: 100%;
 }
-header nav.body .container ul{
+header.body .container ul{
     display: flex;
     margin: 0;
     padding: 0;
 }
-header nav.body .container ul li{
+header.body .container ul li{
     flex: 1 1 auto;
     display: flex;
     justify-content: center;
 }
-header nav.body .container ul li:first-child a{
+header.body .container ul li:first-child a{
     border-left: 1px solid var(--color-3);
 }
-header nav.body .container ul li a{
+header.body .container ul li a{
     width: 100%;
     margin: .5rem 0;
     padding: .3rem;
@@ -103,8 +103,8 @@ header nav.body .container ul li a{
     position: relative;
     overflow: hidden;
 }
-header nav.body .container ul li a:before,
-header nav.body .container ul li a:after{
+header.body .container ul li a:before,
+header.body .container ul li a:after{
     position: absolute;
     content: "";
     height: 1px;
@@ -112,18 +112,18 @@ header nav.body .container ul li a:after{
     width: 100%;
     transition: all .7s ease;
 }
-header nav.body .container ul li a:before{
+header.body .container ul li a:before{
     left: -100%;
     top: 0;
 }
-header nav.body .container ul li a:after{
+header.body .container ul li a:after{
     right: -100%;
     bottom: 0;
 }
-header nav.body .container ul li a:hover:before{
+header.body .container ul li a:hover:before{
     left: 0;
 }
-header nav.body .container ul li a:hover:after{
+header.body .container ul li a:hover:after{
     right: 0;
 }
 
