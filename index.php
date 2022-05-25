@@ -2,6 +2,9 @@
     require_once("layout/head.php");
     require_once("layout/header.php");
 
+    if(isset($_POST)){
+        var_dump($_POST);
+    }
     if(isset($_GET["action"])){
         $a = $_GET["action"];
         if (file_exists("views/".$a.".php")) {
