@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;700&family=Poppins:wght@300;400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Koulen&display=swap');
 :root {
     --color-1: #011822;
@@ -6,9 +6,12 @@
     --color-3: #ffffff;
     --color-4: #251D3A;
     --color-5: #f4d757;
+    --color-6: #004fe8;
+    --color-7: #003fc9;
    
     --font-1: 'Work Sans', sans-serif;
     --font-2: 'Koulen', cursive;
+    --font-3: 'Poppins', sans-serif;
 }
 
 body{
@@ -156,39 +159,441 @@ section.hello .container h2{
     margin-top: 1rem;
 }
 
-section.about{
-    background: rgb(240,240,240);
-    background: linear-gradient(0deg, rgba(240,240,240,1) 0%, rgba(255,255,255,1) 100%);
-}
 section.about .container{
     padding: 3rem 0;
-}
-section.about .container .title{
-    font-size: 2rem;
-    color: var(--color-1);
-}
-section.about .container .about__block{
     display: flex;
+    font-family: var(--font-3);
+    align-items: center;
 }
-section.about .container .about__block .info,
-section.about .container .about__block .photo{
+section.about .container .info,
+section.about .container .photo{
     flex: 1;
 }
-section.about .container .about__block .info{
-    padding-top: 1rem;
+section.about .container .info .info__title{
+    font-size: 3rem;
+    margin-bottom: 2.5rem;
+    font-weight: 600;
+    color: #333333;
 }
-section.about .container .about__block .info p{
-    font-weight: 200;
-    font-size: 1.2rem;
+section.about .container .info p{
+    font-size: 1.05rem;
+    font-weight: 400;
+    color: #666666;
+    margin-bottom: 3rem;
 }
-section.about .container .about__block .photo{
+section.about .container .info .info__btns{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-bottom: 3.5rem;
+}
+section.about .container .info .info__btns a{
+    padding: 1rem 2rem;
+    background-color: #0f8040;
+    transition: all .4s ease-in;
+    color: var(--color-3);
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-decoration: none;
+    -webkit-box-shadow: 0px 1px 26px 0px rgba(34, 60, 80, 0.2);
+    -moz-box-shadow: 0px 1px 26px 0px rgba(34, 60, 80, 0.2);
+    box-shadow: 0px 1px 26px 0px rgba(34, 60, 80, 0.2);
+}
+section.about .container .info .info__btns a.full{
+    padding: 1.5rem 2rem;
+    background-color: var(--color-6);
+}
+section.about .container .info .info__btns a:hover{
+    background-color: var(--color-7);
+}
+section.about .container .info .info__services{
+    display: flex;
+    font-family: var(--font-3);
+    justify-content: center;
+}
+section.about .container .info .info__services a{
     text-align: center;
+    text-decoration: none;
+    padding: 1rem 1.5rem;
+    transition: all .5s ease;
+    -webkit-box-shadow: 0px 1px 26px 0px rgba(34, 60, 80, 0.2);
+    -moz-box-shadow: 0px 1px 26px 0px rgba(34, 60, 80, 0.2);
+    box-shadow: 0px 1px 26px 0px rgba(34, 60, 80, 0.2);
 }
-section.about .container .about__block .photo img{
-    width: 30rem;
+section.about .container .info .info__services a:hover{
+    transform: scale(1.1);
+}
+section.about .container .info .info__services a:not(:last-child){
+    margin-right: 2rem;
+}
+section.about .container .info .info__services a h4{
+    color: #333333;
+    font-size: .8rem;
+    font-weight: 600;
+}
+section.about .container .info .info__services a img{
+    width: 6rem;
+    margin-bottom: 2rem;
+}
+section.about .container .photo{
+    margin: 0 2rem 5rem;
+    min-height: 40rem;
+    padding: 0 2rem;
+    position: relative;
+}
+section.about .container .photo .photo__address{
+    position: absolute;
+    top: 3rem;
+    left: -3rem;
+    padding: 2rem;
+    border-left: .25rem solid var(--color-6);
+    font-size: .9rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    z-index: 10;
+    background-color: var(--color-3);
+    -webkit-box-shadow: 0px 1px 26px 0px rgba(34, 60, 80, 0.2);
+    -moz-box-shadow: 0px 1px 26px 0px rgba(34, 60, 80, 0.2);
+    box-shadow: 0px 1px 26px 0px rgba(34, 60, 80, 0.2);
+}
+section.about .container .photo .photo__img{
+    background: no-repeat url("../img/assets/yard.jpg");
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+section.about .container .photo .photo__img2{
+    background: no-repeat url("../img/assets/driver-top.jpg");
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    bottom: -5rem;
+    left: 50%;
+    transform: translate(-50%,0);
+    width: 60%;
+    height: 90%;
+    padding: 5rem 2rem;
+    color: var(--color-3);
+    -webkit-box-shadow: -2px 5px 57px 0px rgba(0, 79, 232, 0.2);
+    -moz-box-shadow: -2px 5px 57px 0px rgba(0, 79, 232, 0.2);
+    box-shadow: -2px 5px 57px 0px rgba(0, 79, 232, 0.2);
+}
+section.about .container .photo .photo__img2 h4{
+    font-size: .8rem;
+    margin-bottom: 4rem;
+}
+section.about .container .photo .photo__img2 p{
+    font-size: 2rem;
+    font-weight: 500;
+}
+section.teamWork{
+    margin: 4rem 0 .5rem;
+}
+section.teamWork .container{
+    display: flex;
+    padding: 0 3rem;
+}   
+section.teamWork .container .teamWork__photo{
+    display: flex;
+}   
+section.teamWork .container .teamWork__data{
+    display: flex;
+    font-family: var(--font-3);
+    flex-direction: column;
+    padding: 5rem;
+    color: #333;
+}
+section.teamWork .container .teamWork__data h4{
+    color: rgba(0, 0, 0, 0.4);
+    font-size: .7rem;
+    letter-spacing: 2px;
+    font-weight: 600;
+    margin-bottom: 2rem;
+}
+section.teamWork .container .teamWork__data h5{
+    font-size: 4rem;
+    font-weight: 700;
+    margin: 0;
+}
+section.teamWork .container .teamWork__data h6{
+   font-size: 3rem;
+   font-weight: 600; 
+   margin-bottom: 3rem;
+}
+section.teamWork .container .teamWork__data p{
+    font-size: 1.1rem;
+    line-height: 2.5rem;
+    font-weight: 400;
+    color: #666;
 }
 
-footer nav.downMenu .container,
+section.services .container{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: .5rem;
+    margin-bottom: .5rem;
+}
+section.services .container .services__service{
+    background-color: grey;
+    padding: 2.5rem 2.5rem 1rem;
+    text-decoration: none;
+    font-family: var(--font-3);
+    letter-spacing: 1px;
+    display: flex;
+    flex-direction: column;
+}
+section.services .container .services__service h4{
+    font-size: .8rem;
+}
+section.services .container .services__service h3{
+    font-weight: 500;
+    font-size: 1.7rem;
+    margin-top: 1rem;
+}
+section.services .container .services__service p{
+    font-size: .9rem;
+    font-family: sans-serif;
+    font-weight: 500;
+    margin: .6rem 0 2rem;
+    letter-spacing: 0;
+}
+section.services .container .services__service a{
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 1rem 0;
+    width: 100%;
+    text-align: center;
+}
+section.services .container .services__service a span{
+    transition: all .5s ease;
+    margin: 0 1rem;
+}
+section.services .container .services__service a:hover span.left{
+    margin-right: 1.5rem;
+}
+section.services .container .services__service a:hover span.right{
+    margin-left: 1.5rem;
+}
+section.services .container .services__service:first-child{
+    background-color: #f2f4fb;
+}
+section.services .container .services__service:first-child h4{
+    color: rgba(0, 0, 0, 0.4);
+}
+section.services .container .services__service:first-child h3{
+    color: #333;
+}
+section.services .container .services__service:first-child p{
+    color: #666;
+}
+section.services .container .services__service:not(:first-child):not(:last-child){
+    background-color: #182845;
+}
+section.services .container .services__service:not(:first-child):not(:last-child) h4{
+    color: rgba(255,255,255,0.4);
+}
+section.services .container .services__service:not(:first-child):not(:last-child) h3,
+section.services .container .services__service:not(:first-child):not(:last-child) p,
+section.services .container .services__service:not(:first-child):not(:last-child) a,
+section.services .container .services__service:last-child h3,
+section.services .container .services__service:last-child p,
+section.services .container .services__service:last-child a{
+    color: var(--color-3);
+}
+section.services .container .services__service:last-child{
+    background-color: var(--color-6);
+}
+section.services .container .services__service:last-child h4{
+    color: rgba(255,255,255,0.4);
+}
+
+section.applyToDrive{
+    margin: 2rem 0 5rem;
+}
+section.applyToDrive .container{
+    display: flex;
+}
+section.applyToDrive .container .applyToDrive__form,
+section.applyToDrive .container .applyToDrive__info{
+    flex: 1;
+}
+section.applyToDrive .container .applyToDrive__form h2{
+    font-family: var(--font-1);
+    font-weight: 400;
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+section.applyToDrive .container .applyToDrive__form form{
+    display: flex;
+    flex-direction: column;
+}
+section.applyToDrive .container .applyToDrive__form form input,
+section.applyToDrive .container .applyToDrive__form form select{
+    border: .05rem solid #eee;
+    padding: 1rem;
+    background-color: #eee;
+    margin-bottom: 1rem;
+}
+
+section.applyToDrive .container .applyToDrive__form form button{
+    margin-left: auto;
+    background-color: var(--color-6);
+    color: var(--color-3);
+    padding: .5rem 2rem;
+    font-size: 1.2rem;
+    border-radius: 8px;
+    transition: all .5s ease;
+    border: .1rem solid transparent;
+    -webkit-box-shadow: -2px 5px 57px 0px rgba(0, 79, 232, 0.2);
+    -moz-box-shadow: -2px 5px 57px 0px rgba(0, 79, 232, 0.2);
+    box-shadow: -2px 5px 57px 0px rgba(0, 79, 232, 0.2);
+}
+section.applyToDrive .container .applyToDrive__form form button:hover{
+    transform: translate(.1rem,-.1rem);
+}
+section.applyToDrive .container .applyToDrive__info{
+    margin-left: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+section.applyToDrive .container .applyToDrive__info h2{
+    font-size: 3rem;
+    font-weight: 600;
+    font-family: var(--font-3);
+    color: #333;
+}
+section.applyToDrive .container .applyToDrive__info h3{
+    font-family: var(--font-1);
+    font-weight: 400;
+    color: #666;
+    margin-bottom: 2.5rem;
+}
+section.applyToDrive .container .applyToDrive__info ul li{
+    margin-bottom: 2rem;
+}
+section.applyToDrive .container .applyToDrive__info ul li h4{
+    font-family: var(--font-3);
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+footer{
+    background-color: #182845;
+}
+footer .container{
+    padding: 5rem 0 2rem;
+    font-family: var(--font-3);
+}
+footer .container h4{
+    color: rgba(255,255,255,0.4);
+    font-weight: 600;
+    font-size: .8rem;
+    letter-spacing: 1px;
+}
+footer .container .footer__row{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+footer .container .footer__row h2{
+    font-size: 3rem;
+    font-weight: 600;
+    color: var(--color-3);
+    margin-bottom: 5rem;
+}
+footer .container .footer__row a{
+    padding: 1.5rem 4rem;
+    background-color: var(--color-6);
+    color: var(--color-3);
+    font-size: 1rem;
+    font-family: var(--font-1);
+    -webkit-box-shadow: -2px 5px 57px 0px rgba(0, 79, 232, 0.2);
+    -moz-box-shadow: -2px 5px 57px 0px rgba(0, 79, 232, 0.2);
+    box-shadow: -2px 5px 57px 0px rgba(0, 79, 232, 0.2);
+    text-decoration: none;
+    transition: all .5s ease-in;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+footer .container .footer__row a:hover{
+    background-color: var(--color-7);
+}
+footer .container .footer__info{
+    display: flex;
+    min-height: 50vh;
+}
+footer .container .footer__info .footer__info__media,
+footer .container .footer__info .footer__info__other{
+    flex: 1;
+}
+footer .container .footer__info .footer__info__media{
+    position: relative;
+    background-image: url("../img/assets/yard-2.jpg");
+    background-size: cover;
+    background-position: center;
+    margin-right: 3.5rem;
+}
+footer .container .footer__info .footer__info__other .other__info{
+    margin-bottom: 3.5rem;
+}
+footer .container .footer__info .footer__info__other .other__info .other__block{
+    padding: 1.5rem 2rem;
+    border: .05rem solid #ffffff1f;
+    margin-bottom: 1.5rem;
+}
+footer .container .footer__info .footer__info__other .other__info .other__block h3{
+    font-family: var(--font-3);
+    font-size: .8rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: rgba(255,255,255,0.4);
+}
+footer .container .footer__info .footer__info__other .other__info .other__block a{
+    color: var(--color-3);
+    font-family: var(--font-3);
+    font-weight: 500;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    text-decoration: none;
+}
+footer .container .footer__info .footer__info__other .other__schedule{
+    font-family: var(--font-3);
+    font-weight: 600;
+}
+footer .container .footer__info .footer__info__other .other__schedule .schedule__row{
+    display: flex;
+    justify-content: space-between;
+    padding:  1rem 0;
+    border-bottom: .05rem solid #ffffff1f;
+}
+footer .container .footer__info .footer__info__other .other__schedule .schedule__row .days{
+    color: rgba(255,255,255,0.4);
+}
+footer .container .footer__info .footer__info__other .other__schedule .schedule__row .time{
+    color: var(--color-3);
+}
+.copyRight{
+    background-color: #171717;
+}
+.copyRight .container{
+    padding: 1rem 5rem;
+}
+.copyRight .container p{
+    margin: 0;
+    color: var(--color-3);
+    font-family: var(--font-3);
+    font-weight: 400;
+}
+
+
+/* footer nav.downMenu .container,
 footer .copyRight .container{
     padding: 1rem;
     color: var(--color-3);
@@ -231,7 +636,6 @@ footer nav.downMenu .contacts ul li{
 footer nav.downMenu .links ul li:before{
     content: "";
     position: absolute;
-    /* transition: all .7s ease; */
     left: -1.4rem;
     top: 35%;
     border-radius: 50%;
@@ -294,4 +698,4 @@ footer .copyRight p{
     text-align: center;
     font-weight: 500;
     color: var(--color-4);
-}
+} */
