@@ -1,54 +1,41 @@
 <footer>
-            <div class="container">
-                <h4>GET STARTED</h4>
-                <div class="footer__row">
-                    <h2>BE PART OF A GREAT TEAM!</h2>
-                    <a href="#">DRIVE WITH US</a>
-                </div>
-                <div class="footer__info">
-                    <div class="footer__info__media">
-                        <div class="media__shares">
-                            <div class="media__share">
-                                <img src="" alt="">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="footer__info__other">
-                        <div class="other__info">
-                            <div class="other__block">
-                                <h3>CALL US</h3>
-                                <a href="#">(847) 610-9007</a>
-                            </div>
-                            <div class="other__block">
-                                <h3>EMAIL US</h3>
-                                <a href="#">info@gtscarrier.com</a>
-                            </div>
-                            <div class="other__block">
-                                <h3>OFFICE</h3>
-                                <a href="https://goo.gl/maps/GuSjBJRdkSJvmFxW9" target="_blank">4612 Hirschberg Ave, Schiller Park, IL 60176, USA</a>
-                            </div>
-                        </div>
-                        <div class="other__schedule">
-                            <div class="schedule__row">
-                                <span class="days">Monday – Friday</span>
-                                <span class="time">8am – 5pm</span>
-                            </div>
-                            <div class="schedule__row">
-                                <span class="days">Weekend</span>
-                                <span class="time">Closed</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    <nav class="downMenu">
+        <div class="container">
+            <div class="links">
+                <h3 class="title">Quick Links</h3>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/#about">About Us</a></li>
+                    <li><a href="#">Our Services</a></li>
+                    <li><a href="#">Why Choose us</a></li>
+                    <li><a href="#">Locations</a></li>
+                    <li><a href="#">Contacts</a></li>
+                </ul>
             </div>
-        </footer>
-        <section class="copyRight">
-            <div class="container">
-                <p>ROSAVA GROUP 2022. All Rights Reserved</p>
+            <div class="logo">
+                <a href="/"><img src="/img/Logo.png" alt="Logo"></a>
+                <p>TOP Masonry&Tuckpointing is a full service masonry, E.I.F.S./stucco and caulking contractor serving architects, construction managers, condominium associations, developers, general contractors, homeowners and private and public institutions.</p>
             </div>
-        </section>
-
-        <script src="/js/index.js"></script>
-
-    </body>
-</html>
+            <div class="contacts">
+                <h3 class="title">Contacts Information</h3>
+                <ul>
+                    <li><img src="/img/assets/location.png" alt="Location"><a target="_blank" href="https://maps.google.com/maps?ll=41.962223,-87.873828&z=16&t=m&hl=en&gl=UA&mapclient=embed&q=4612%20Hirschberg%20Ave%20Schiller%20Park%2C%20IL%2060176%20USA">4612 Hirschberg Ave Schiller Park, IL 60176 USA</a></li>
+                    <li>
+                        <img src="/img/assets/phone.png" alt="Phone">
+                        <div class="links">
+                            <a href="tel:+13312252027">+1 (331) 225 2027</a>
+                            <a href="tel:+17736278837">+1 (773) 627 8837</a>
+                        </div>
+                        
+                    </li>
+                    <li><img src="/img/assets/gmail.png" alt="Mail"><a href="mailto:rosavagroup@yahoo.com">rosavagroup@yahoo.com</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- <div class="copyRight">
+        <div class="container">
+            <p>Copyright 2022</p>
+        </div>
+    </div> -->
+</footer>
