@@ -1,3 +1,15 @@
+<?php
+    if(isset($_POST)&&count($_POST)>0){
+        $mysqli = DATABASE::Connect();
+        $sql = "INSERT INTO `application` (`App_name`,`App_Mail`,`App_Phone`,`App_Code`,`App_Services`,`App_Driving_Experience`,`App_HowKnow`) VALUES (?,?,?,?,?,?,?);"; // SQL with parameters
+        $stmt = $mysqli->prepare($sql);
+        $stmt->bind_param("sssssss",$_POST["name"],$_POST["mail"],$_POST["tel"],$_POST["code"],$_POST["services"],$_POST["driving_experience"],$_POST["contact_about_us"]); 
+        $stmt->execute();
+        ?>
+        <script>window.location.href = "index.php?action=applicationSussess"</script> 
+        <?php
+    }
+?>
 <main>
     <section class="hello">
         <div class="container">
@@ -12,15 +24,15 @@
             <div class="services__service__block">
                 <div class="services__service" href="#">
                     <a href="#">Solo Driver</a>
-                    <img src="/img/assets/solo_driver.jpg" alt="Solo Driver">
+                    <img src="img/assets/solo_driver.jpg" alt="Solo Driver">
                 </div>
                 <div class="services__service" href="#">
                     <a href="#">Owner Operator</a>
-                    <img src="/img/assets/own_operator.jpg" alt="Solo Driver">
+                    <img src="img/assets/own_operator.jpg" alt="Solo Driver">
                 </div>
                     <div class="services__service" href="#">
                     <a href="#">Team Drivers</a>
-                    <img src="/img/assets/team_drivers.jpg" alt="Solo Driver">
+                    <img src="img/assets/team_drivers.jpg" alt="Solo Driver">
                 </div>
             </div>
         </div>
@@ -28,11 +40,11 @@
     <section class="applyToDrive" id="applyToDrive">
         <div class="container">
             <div class="applyToDrive__photo">
-                <img src="/img/assets/aplication.jpg" alt="Application Photo">
+                <img src="img/assets/aplication.jpg" alt="Application Photo">
             </div>
             <div class="applyToDrive__form">
                 <h2>APPLY TO DRIVE FOR ROSAVA GROUP!</h2>
-                <form action="/" method="POST">
+                <form action="index.php" method="POST">
                     <input type="text" maxlength="50" placeholder="Name" required name="name" id="name" pattern="[a-zA-Z]*">
 
                     <input type="email" placeholder="Email Address" required name="mail">
@@ -77,18 +89,22 @@
                 <h2 class="title">Contact Us</h2>
                 <ul>
                     <li>
-                        <img src="/img/assets/phone.png" alt="Phone">
-                        <a href="tel:+13312252027">+1 (331) 225 2027</a>
-                        <a href="tel:+17736278837">+1 (773) 627 8837</a>
+                        <img src="img/assets/phone.png" alt="Phone">
+                        <?php 
+                            $phones = CONFIG::getPhone();
+                            for ($i=0; $i < count($phones); $i++) { 
+                                ?><a href="tel:<?php echo $phones[$i]["config_value"]?>"><?php echo CONFIG::getFormatPhone($phones[$i]["config_value"])?></a><?php
+                            }
+                        ?>
                     </li>
                     <li>
-                        <img src="/img/assets/fax.png" alt="Fax">
-                        <a href="https://www.paygofax.com/?company=Rosava Group&fax=13312252028" target="_blank">+1 (331) 225 2028</a>
+                        <img src="img/assets/fax.png" alt="Fax">
+                        <a href="https://www.paygofax.com/?fax=<?php echo CONFIG::getFormatFax(CONFIG::getFax())?>" target="_blank"><?php echo CONFIG::getFormatPhone(CONFIG::getFax())?></a>
                     </li>
-                    <li><img src="/img/assets/gmail.png" alt="Mail"><a href="mailto:rosavagroup@yahoo.com">rosavagroup@yahoo.com</a></li>
-                    <li><img src="/img/assets/location.png" alt="Location"><a target="_blank" href="https://maps.google.com/maps?ll=41.962223,-87.873828&z=16&t=m&hl=en&gl=UA&mapclient=embed&q=4612%20Hirschberg%20Ave%20Schiller%20Park%2C%20IL%2060176%20USA">4612 Hirschberg Ave Schiller Park, IL 60176 USA</a></li>
-                    <li><img src="/img/assets/facebook.png" alt="Facebook"><a href="#">Rosava Group</a></li>
-                    <li><img src="/img/assets/instagram.png" alt="Instagram"><a href="#">Rosava Group</a></li>
+                    <li><img src="img/assets/gmail.png" alt="Mail"><a href="mailto:<?php echo CONFIG::getMail()?>"><?php echo CONFIG::getMail()?></a></li>
+                    <li><img src="img/assets/location.png" alt="Location"><a target="_blank"><?php echo CONFIG::getLocation()?></a></li>
+                    <li><img src="img/assets/facebook.png" alt="Facebook"><a href="<?php echo CONFIG::getFacebook()?>">Rosava Group</a></li>
+                    <li><img src="img/assets/instagram.png" alt="Instagram"><a href="<?php echo CONFIG::getInstagram()?>">Rosava Group</a></li>
                 </ul>
             </div>
             <div class="map">

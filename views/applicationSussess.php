@@ -4,6 +4,6 @@
 </main>
 <script>
     setTimeout(()=>{
-        window.location.href = "/"
+        window.location.href = "index.php"
     },5000)
 </script>

@@ -52,7 +52,7 @@ header.head .container ul.contacts li:first-child{
 header.head .container ul.contacts li{
     display: flex;
     align-items: center;
-    margin-left: 5rem;
+    margin-left: 3rem;
     color: var(--color-3);  
 }
 header.head .container ul.contacts li ul.media{
@@ -67,16 +67,30 @@ header.head .container ul.contacts li a{
     color: var(--color-3);
     transition: all .4s ease;
 }
-header.head .container ul.contacts li a.signin{
+header.head .container ul.contacts li a.signin,
+header.head .container ul.contacts li button{
     padding: .5rem 1rem;
     background-color: var(--color-6);
     color: var(--color-3);
     border-radius: 5px;
 }
+header.head .container ul.contacts li button{
+    margin-left: .5rem;
+    border: none;
+    background: none;
+    padding: 0;
+    transform: scaleX(-1); 
+    font-size: 1.5rem;
+    transition: all .4s ease;
+}
 header.head .container ul.contacts li a:hover,
 section.info .container .info ul li a:hover{
     transform: translate(.2rem,-.2rem);
 }
+header.head .container ul.contacts li button:hover{
+    transform: translate(.2rem,-.2rem) scaleX(-1); 
+}
+
 header.head .container ul.contacts li img{
     width: 2rem;
     margin-right: .5rem;
@@ -140,7 +154,7 @@ header.body .container ul li a:hover:after{
 }
 
 section.hello{
-    background-image: url("../img/tittle2.jpg");
+    background-image: url("../img/title.jpg");
     background-size: cover;
     background-position: 50% 85%;
     min-height: 88vh;
@@ -365,6 +379,24 @@ section.applyToDrive .container .applyToDrive__photo img{
     position: absolute;
     top: 3rem;
     right: 0;
+}
+
+main#signIn{
+    display: flex;
+}
+main#signIn .container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1 1 auto;
+}
+main#signIn .container form{
+    display: flex;
+    flex-direction: column;
+}
+.error{
+    
 }
 
 footer nav.downMenu .container,
