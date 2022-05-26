@@ -14,7 +14,7 @@
             </div>
             <div class="logo">
                 <a href="/"><img src="img/Logo.png" alt="Logo"></a>
-                <p>TOP Masonry&Tuckpointing is a full service masonry, E.I.F.S./stucco and caulking contractor serving architects, construction managers, condominium associations, developers, general contractors, homeowners and private and public institutions.</p>
+                <p><?php echo CONFIG::getDescription()?></p>
             </div>
             <div class="contacts">
                 <h3 class="title">Contacts Information</h3>

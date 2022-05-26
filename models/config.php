@@ -24,7 +24,7 @@
 		}
 		public static function getDescription(){
 			$mysqli = DATABASE::Connect();
-			$sql = "SELECT * FROM `config` WHERE `config_key`='fax'";
+			$sql = "SELECT * FROM `config` WHERE `config_key`='siteDescription'";
 			$stmt = $mysqli->prepare($sql);
 			$stmt->execute();
 			return $stmt->get_result()->fetch_all(MYSQLI_ASSOC)[0]["config_value"];

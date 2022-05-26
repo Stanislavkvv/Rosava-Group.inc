@@ -20,7 +20,7 @@
     <section class="services">
         <div class="container">
             <h1>ROSAVA GROUP</h1>
-            <h3>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nobis beatae aperiam, voluptas eligendi nulla rerum ipsam recusandae perspiciatis ad unde ratione, quas, omnis sequi corrupti facere debitis est dolorum. Laborum?</h3>
+            <h3><?php echo CONFIG::getDescription()?></h3>
             <div class="services__service__block">
                 <div class="services__service" href="#">
                     <a href="#">Solo Driver</a>
