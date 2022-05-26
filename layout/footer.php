@@ -19,7 +19,7 @@
             <div class="contacts">
                 <h3 class="title">Contacts Information</h3>
                 <ul>
-                    <li><img src="img/assets/location.png" alt="Location"><a target="_blank" href="https://maps.google.com/maps?ll=41.962223,-87.873828&z=16&t=m&hl=en&gl=UA&mapclient=embed&q=4612%20Hirschberg%20Ave%20Schiller%20Park%2C%20IL%2060176%20USA">4612 Hirschberg Ave Schiller Park, IL 60176 USA</a></li>
+                    <li><img src="img/assets/location.png" alt="Location"><?php echo CONFIG::getLocation()?></li>
                     <li>
                         <img src="img/assets/phone.png" alt="Phone">
                         <div class="links">
