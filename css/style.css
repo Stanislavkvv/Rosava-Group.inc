@@ -332,24 +332,54 @@ section.teamWork .container .teamWork__data p{
 }
 
 section.services{
-    background-image: url("../img/assets/map.webp");
+    /* background-image: url("../img/assets/map.webp"); */
     background-size: cover;
     background-position: center;
 }
 section.services .container{
+    margin: 2rem auto .5rem;
+    text-align: center;
+}
+section.services .container h1{
+    margin-bottom: 1rem;
+    font-family: var(--font-1);
+    font-weight: 700;
+}
+section.services .container h3{
+    font-size: 1.5rem;
+    padding: 0 10%;
+    font-family: var(--font-3);
+    font-weight: 400;
+}
+section.services .container .services__service__block{
     display: grid;
     grid-template-columns: repeat(3,1fr);
-    grid-gap: 1rem;
-    margin: 0 auto .5rem;
+    grid-gap: .5rem;
 }
 section.services .container .services__service{
-    padding: 2.5rem 2.5rem 1rem;
+    padding: 8rem 5rem 2rem;
     text-decoration: none;
     font-family: var(--font-3);
     letter-spacing: 1px;
+    margin-top: 1.5rem;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: flex-end;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+section.services .container .services__service a{
+    padding: 1rem 3rem;
+    background-color: var(--color-2);
+    border-radius: 10px;
+    color: var(--color-1);
+    transition: all .5s ease-in;
+}
+section.services .container .services__service a:hover{
+    background-color: var(--color-1);
+    color: var(--color-2);
 }
 section.services .container .services__service img{
     width: 5rem;
@@ -384,6 +414,16 @@ section.services .container .services__service a:hover span.left{
 section.services .container .services__service a:hover span.right{
     margin-left: 1.5rem;
 }
+section.services .container .services__service:first-child{
+    background-image: url("../img/assets/driver.jpg");
+}
+section.services .container .services__service:not(:last-child):not(:first-child){
+    background-image: url("../img/assets/driver.jpg");
+}
+section.services .container .services__service:last-child{
+    background-image: url("../img/assets/driver.jpg");
+}
+
 section.applyToDrive{
     margin: 0 0 5rem;
     padding-top: 3rem;

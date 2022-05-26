@@ -7,23 +7,18 @@
     </section>
     <section class="services">
         <div class="container">
-            <div class="services__service" href="#">
-                <img src="/img/assets/icon-clock-n.png" alt="">
-                <h3>Solo Driver</h3>
-                <p>GTS Transportation is looking for solo drivers to fill some of our open trucks.</p>
-                <a href="#"><span class="left">❮</span> MORE INFO <span class="right">❯</span></a>
-            </div>
-            <div class="services__service" href="#">
-                <img src="/img/assets/icon-clock-n.png" alt="">
-                <h3>Owner Operator</h3>
-                <p>Enjoy the freedom of your own authority while we provide all the support on the back end.</p>
-                <a href="#"><span class="left">❮</span> MORE INFO <span class="right">❯</span></a>
-            </div>
+            <h1>ROSAVA GROUP</h1>
+            <h3>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nobis beatae aperiam, voluptas eligendi nulla rerum ipsam recusandae perspiciatis ad unde ratione, quas, omnis sequi corrupti facere debitis est dolorum. Laborum?</h3>
+            <div class="services__service__block">
                 <div class="services__service" href="#">
-                <img src="/img/assets/icon-clock-n.png" alt="">
-                <h3>Team Drivers</h3>
-                <p>Teams of two are able to effectively manage their time and are able to run more miles than a solo driver.</p>
-                <a href="#"><span class="left">❮</span> MORE INFO <span class="right">❯</span></a>
+                    <a href="#">Solo Driver</a>
+                </div>
+                <div class="services__service" href="#">
+                    <a href="#">Owner Operator</a>
+                </div>
+                    <div class="services__service" href="#">
+                    <a href="#">Team Drivers</a>
+                </div>
             </div>
         </div>
     </section>
@@ -79,7 +74,7 @@
             <div class="applyToDrive__form">
                 <h2>APPLY TO DRIVE FOR ROSAVA GROUP!</h2>
                 <form action="/" method="POST">
-                    <input type="text" maxlength="50" placeholder="Name" required name="name" id="name">
+                    <input type="text" maxlength="50" placeholder="Name" required name="name" id="name" pattern="[A-Za-z]">
 
                     <input type="email" placeholder="Email Address" required name="mail">
 
