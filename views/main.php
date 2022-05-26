@@ -33,7 +33,7 @@
             <div class="applyToDrive__form">
                 <h2>APPLY TO DRIVE FOR ROSAVA GROUP!</h2>
                 <form action="/" method="POST">
-                    <input type="text" maxlength="50" placeholder="Name" required name="name" id="name" pattern="[A-Za-z]">
+                    <input type="text" maxlength="50" placeholder="Name" required name="name" id="name" pattern="[a-zA-Z]*">
 
                     <input type="email" placeholder="Email Address" required name="mail">
 

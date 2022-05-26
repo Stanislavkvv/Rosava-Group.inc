@@ -10,7 +10,7 @@
 		$stmt->bind_param("sssssss",$_POST["name"],$_POST["mail"],$_POST["tel"],$_POST["code"],$_POST["services"],$_POST["driving_experience"],$_POST["contact_about_us"]); 
 		$stmt->execute();
         ?>
-        <script>window.location.href = window.location.href</script> 
+        <script>window.location.href = "/?action=applicationSussess"</script> 
         <?php
     }
     if(isset($_GET["action"])){

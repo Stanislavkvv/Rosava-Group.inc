@@ -33,9 +33,7 @@
             </div>
         </div>
     </nav>
-    <!-- <div class="copyRight">
-        <div class="container">
-            <p>Copyright 2022</p>
-        </div>
-    </div> -->
+    
+    <script src="/js/index.js"></script>
+
 </footer>
