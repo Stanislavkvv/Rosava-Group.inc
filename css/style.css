@@ -331,31 +331,36 @@ section.teamWork .container .teamWork__data p{
     color: #666;
 }
 
+section.services{
+    background-image: url("../img/assets/map.webp");
+    background-size: cover;
+    background-position: center;
+}
 section.services .container{
     display: grid;
     grid-template-columns: repeat(3,1fr);
-    grid-gap: .5rem;
-    margin-bottom: .5rem;
+    grid-gap: 1rem;
+    margin: 0 auto .5rem;
 }
 section.services .container .services__service{
-    background-color: grey;
     padding: 2.5rem 2.5rem 1rem;
     text-decoration: none;
     font-family: var(--font-3);
     letter-spacing: 1px;
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
-section.services .container .services__service h4{
-    font-size: .8rem;
+section.services .container .services__service img{
+    width: 5rem;
 }
 section.services .container .services__service h3{
-    font-weight: 500;
+    font-weight: 700;
     font-size: 1.7rem;
     margin-top: 1rem;
 }
 section.services .container .services__service p{
-    font-size: .9rem;
+    font-size: 1rem;
     font-family: sans-serif;
     font-weight: 500;
     margin: .6rem 0 2rem;
@@ -379,41 +384,9 @@ section.services .container .services__service a:hover span.left{
 section.services .container .services__service a:hover span.right{
     margin-left: 1.5rem;
 }
-section.services .container .services__service:first-child{
-    background-color: #f2f4fb;
-}
-section.services .container .services__service:first-child h4{
-    color: rgba(0, 0, 0, 0.4);
-}
-section.services .container .services__service:first-child h3{
-    color: #333;
-}
-section.services .container .services__service:first-child p{
-    color: #666;
-}
-section.services .container .services__service:not(:first-child):not(:last-child){
-    background-color: #182845;
-}
-section.services .container .services__service:not(:first-child):not(:last-child) h4{
-    color: rgba(255,255,255,0.4);
-}
-section.services .container .services__service:not(:first-child):not(:last-child) h3,
-section.services .container .services__service:not(:first-child):not(:last-child) p,
-section.services .container .services__service:not(:first-child):not(:last-child) a,
-section.services .container .services__service:last-child h3,
-section.services .container .services__service:last-child p,
-section.services .container .services__service:last-child a{
-    color: var(--color-3);
-}
-section.services .container .services__service:last-child{
-    background-color: var(--color-6);
-}
-section.services .container .services__service:last-child h4{
-    color: rgba(255,255,255,0.4);
-}
-
 section.applyToDrive{
-    margin: 2rem 0 5rem;
+    margin: 0 0 5rem;
+    padding-top: 3rem;
 }
 section.applyToDrive .container{
     display: flex;
