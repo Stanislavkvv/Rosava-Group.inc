@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 26, 2022 at 10:58 PM
+-- Generation Time: May 27, 2022 at 01:36 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -38,6 +38,13 @@ CREATE TABLE `application` (
   `App_HowKnow` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `application`
+--
+
+INSERT INTO `application` (`ID`, `App_Name`, `App_Mail`, `App_Phone`, `App_Code`, `App_Services`, `App_Driving_Experience`, `App_HowKnow`) VALUES
+(24, 'Serhiy Paziuk', 'paz.serhiy@gmail.com', '+380950218131', '59400', 'Solo', 'Under 1 year', 'Referral');
+
 -- --------------------------------------------------------
 
 --
@@ -57,13 +64,13 @@ CREATE TABLE `config` (
 
 INSERT INTO `config` (`config_id`, `config_key`, `config_value`, `config_timeAdd`) VALUES
 (1, 'phone', '+13312252027', '2022-05-26 22:46:19'),
-(2, 'phone2', '+17736278837', '2022-05-26 22:47:29'),
+(2, 'phone', '+17736278837', '2022-05-26 22:47:29'),
 (3, 'fax', '+13312252028', '2022-05-26 22:47:50'),
 (4, 'location', '4612 Hirschberg Ave Schiller Park, IL 60176 USA', '2022-05-26 22:49:06'),
 (5, 'mail', 'rosavaGroup@yahoo.com', '2022-05-26 22:50:10'),
 (6, 'facebook', 'https://www.facebook.com', '2022-05-26 22:52:39'),
 (7, 'instagram', 'https://www.instagram.com', '2022-05-26 22:53:10'),
-(8, 'siteDescription', 'TOP Masonry&Tuckpointing is a full service masonry, E.I.F.S./stucco and caulking contractor serving architects, construction managers, condominium associations, developers, general contractors, homeowners and private and public institutions.', '2022-05-26 22:56:15');
+(8, 'siteDescription', 'Rosava group is a rapidly growing company located in Chicagoland area, operating in 48 states with more then 20 trucks', '2022-05-26 22:56:15');
 
 -- --------------------------------------------------------
 
@@ -115,7 +122,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `application`
 --
 ALTER TABLE `application`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT for table `config`

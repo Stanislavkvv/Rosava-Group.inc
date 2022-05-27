@@ -1,9 +1,14 @@
-<main>
-    <h1>Application was sent sussessfully</h1>
-    <h2>You will be sent to the main page in 5 seconds</h2>
+<main id="success" class="message">
+    <div class="blur"></div>
+    <div class="container">
+        <div class="successBlock">
+            <div class="head">
+                <img src="img/assets/success.png" alt="Success">
+            </div>
+            <div class="body">
+                <p class="congrats">Congratulations! <br> Your application has been successfully sent.</p>
+                <a href="index.php">Main Page</a>
+            </div>
+        </div>
+    </div>
 </main>
-<script>
-    setTimeout(()=>{
-        window.location.href = "index.php"
-    },5000)
-</script>

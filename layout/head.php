@@ -14,17 +14,17 @@
         <link rel="icon" type="image/png" sizes="32x32" href="img/favicons/favicon-32x32.png">
         <link rel="icon" type="image/png" sizes="16x16" href="img/favicons/favicon-16x16.png">
         <link rel="manifest" href="img/favicons/site.webmanifest">
-        <link rel="mask-icon" href="img/favicons/safari-pinned-tab.svg" color="#f37800">
-        <meta name="msapplication-TileColor" content="#ffffff">
+        <link rel="mask-icon" href="img/favicons/safari-pinned-tab.svg" color="#251d3a">
+        <meta name="msapplication-TileColor" content="#251d3a">
         <meta name="msapplication-TileImage" content="img/favicons/mstile-144x144.png">
-        <meta name="theme-color" content="#ffffff">
+        <meta name="theme-color" content="#251d3a">
 
         <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
 
         <!-- SEO -->
 
         <!-- Description of site - max 135 symbols -->
-        <meta name="description" content="">
+        <meta name="description" content="<?php echo CONFIG::getDescription()?>">
 
         <!-- Keywords of site - max 20 words or 10 keywords over comma -->
         <meta name="keywords" content="">
@@ -36,7 +36,7 @@
         <meta name="Copyright" content="Rosava Group">
 
         <!-- Address -->
-        <meta name="Address" content="">
+        <meta name="Address" content="<?php echo CONFIG::getLocation()?>">
 
         <!-- SHARE IN MEDIA (All except Twitter)-->
 
@@ -49,7 +49,7 @@
         <meta property="og:title" content="Rosava Group">
 
         <!-- Description of share -->
-        <meta property="og:description" content="">
+        <meta property="og:description" content="<?php echo CONFIG::getDescription()?>">
 
         <!-- What image will display in share -->
         <meta property="og:image" content="img/Logo.png">
@@ -70,9 +70,9 @@
         <!-- Title of site -->
         <meta name="twitter:title" content="Rosava Group">
         <!-- Description of share -->
-        <meta name="twitter:description" content="">
+        <meta name="twitter:description" content="<?php echo CONFIG::getDescription()?>">
         <!-- What image will display in share -->
-        <meta name="twitter:image" content="">
+        <meta name="twitter:image" content="img/Logo.png">
 
         <!-- SEO -->
 

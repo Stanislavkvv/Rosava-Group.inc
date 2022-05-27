@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;700&family=Poppins:wght@300;400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Koulen&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Koulen&family=Montserrat:wght@300;400;500;600;700&display=swap');
 :root {
     --color-1: #011822;
     --color-2: #fcde58 ;
@@ -12,6 +12,7 @@
     --font-1: 'Work Sans', sans-serif;
     --font-2: 'Koulen', cursive;
     --font-3: 'Poppins', sans-serif;
+    --font-4: 'Montserrat', sans-serif;
 }
 
 body{
@@ -84,7 +85,8 @@ header.head .container ul.contacts li button{
     transition: all .4s ease;
 }
 header.head .container ul.contacts li a:hover,
-section.info .container .info ul li a:hover{
+section.info .container .info ul li a:hover,
+main#admin aside ul li .buttn:hover{
     transform: translate(.2rem,-.2rem);
 }
 header.head .container ul.contacts li button:hover{
@@ -382,21 +384,250 @@ section.applyToDrive .container .applyToDrive__photo img{
 }
 
 main#signIn{
-    display: flex;
+    background-image: url("../img/title.jpg");
+    background-position: 50% 90%;
 }
-main#signIn .container{
+main.message{
+    display: flex;
+    min-height: 30rem;
+    position: relative;
+    background-size: cover;
+}
+main.message .blur{
+    background-color: rgba(255,255,255, 0.9);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+main.message .container{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     flex: 1 1 auto;
+    z-index: 2;
+}
+main#signIn .container .form__block{
+    padding: 2rem;
+    background: rgb(37,29,58);
+    background: linear-gradient(180deg, rgba(37,29,58,1) 0%, rgba(1,24,34,1) 100%);
+    margin: 2rem 0;
+    border-radius: 20px;
+}
+main#signIn .container .form__block .photo{
+    text-align: center;
+    margin-bottom: 1rem;
+}
+main#signIn .container .form__block .photo img{
+    width: 50%;
+}
+main#signIn .container .form__block .title{
+    font-size: 2rem;
+    margin: 0;
+    color: var(--color-3);
+    font-family: var(--font-4);
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: 1rem;
 }
 main#signIn .container form{
     display: flex;
     flex-direction: column;
 }
-.error{
-    
+main#signIn .container form .formInput{
+    display: flex;
+    position: relative;
+}
+main#signIn .container form input{
+    padding: .5rem 3.5rem;
+    border-radius: 30px;
+    border: none;
+    margin-bottom: 1rem;
+    position: relative;
+    flex: 1 1 auto;
+}
+main#signIn .container form .formInput img{
+    position: absolute;
+    width: 2rem;
+    top: 0;
+    left: 1rem;
+    transform: translate(0,12.5%);
+}
+main#signIn .container form button{
+    margin: 0 auto;
+    border: none;
+    padding: .5rem 2rem;
+    border-radius: 30px;
+    font-family: var(--font-4);
+    background-color: var(--color-6);
+    font-weight: 500;
+    transition: all .5s ease;
+    color: var(--color-3);
+}
+main#signIn .container form button:hover{
+    background-color: var(--color-7);
+    padding: .5rem 3rem;
+}
+main#signIn .container .form__block .signInError.error{
+    margin-top: 1.1rem;
+    background-color: red;
+    border-radius: 30px;
+    text-align: center;
+    font-weight: 500;
+    color:  var(--color-3);
+    font-family: var(--font-1);
+    padding: .5rem;
+}
+
+main#success{
+    background-image: url("../img/title.jpg");
+    background-position: 50% 90%;
+}
+main.message .container .successBlock{
+    display: flex;
+    flex-direction: column;
+}
+main.message .container .successBlock .head{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    border-radius: 10px 10px 0 0;
+}
+main#success .container .successBlock .head{
+    background-color: var(--color-6);
+}
+main#error .container .successBlock .head{
+    background-color: red;
+}
+main.message .container .successBlock .head img{
+    width: 5rem;
+}
+main.message .container .successBlock .body{
+    padding: 2rem;
+    border-radius: 0 0 10px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgb(37,29,58);
+    background: linear-gradient(180deg, rgba(37,29,58,1) 0%, rgba(1,24,34,1) 100%);
+}
+main.message .container .successBlock .body .congrats{
+    font-size: 1.4rem;
+    font-family: var(--font-3);
+    text-align: center;
+    margin: 0;
+}
+main#success .container .successBlock .body .congrats{
+    color: var(--color-3);
+}
+main.message .container .successBlock .body a{
+    text-decoration: none;
+    color: var(--color-3);
+    padding: .5rem 0;
+    width: 50%;
+    text-align: center;
+    transition: all .5s ease;
+    margin-top: 1rem;
+    border-radius: 30px;
+    font-family: var(--font-4);
+    font-weight: 400;
+    -webkit-box-shadow: -2px 5px 57px 0px rgba(0, 79, 232, 0.2);
+    -moz-box-shadow: -2px 5px 57px 0px rgba(0, 79, 232, 0.2);
+    box-shadow: -2px 5px 57px 0px rgba(0, 79, 232, 0.2);
+    background-color: var(--color-6);
+}
+main.message .container .successBlock .body a:hover{
+    width: 60%;
+}
+main#error{
+    background-image: url("../img/title.jpg");
+    background-position: 50% 90%;
+    color: var(--color-3);
+}
+main#error .container .successBlock .body h2{
+    font-family: var(--font-2);
+    font-size: 3.5rem;
+    letter-spacing: 1px;
+}
+main#error .container .successBlock .body h3{
+    font-family: var(--font-4);
+}
+main#error .container .successBlock .body p{
+    font-family: var(--font-1);
+    margin-top: .5rem;
+}
+
+main#admin{
+    display: flex;
+}
+main#admin .container{
+    display: flex;
+    flex: 1 1 auto;
+    min-height: 30rem;
+}
+main#admin aside{
+    flex: 1;
+    background-color: var(--color-4);
+    margin: 1rem 0;
+    border-radius: 10px 0 0 10px;
+    padding: 1rem;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+}
+main#admin aside ul{
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    width: 100%;
+    margin: .5rem 0 0;
+}
+main#admin aside ul li{
+    display: flex;
+    flex: 1 1 auto;
+    margin-top: .5rem;
+}
+main#admin aside ul li .buttn{
+    flex: 1 1 auto;
+    padding: .5rem 1rem;
+    position: relative;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    border: none;
+    text-decoration: none;
+    background-color: var(--color-6);
+    color: var(--color-3);
+    font-family: var(--font-4);
+    transition: all .5s ease;
+}
+main#admin aside ul li .buttn:hover{
+    background-color: var(--color-7);
+}
+main#admin aside ul li .buttn i{
+    top: 50%;
+    transform: translate(0,-50%);
+    left: 1rem;
+    position: absolute;
+    font-size: 1.5rem;
+}
+main#admin aside .logo{
+    text-align: center;
+    width: 100%;
+}
+main#admin aside .logo img{
+    width: 60%;
+}
+main#admin section.content{
+    flex: 3;
+    margin: 1rem 0;
+    background-color: #f4f6f9;
+    border-radius: 0 10px 10px 0;
 }
 
 footer nav.downMenu .container,

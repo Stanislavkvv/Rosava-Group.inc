@@ -11,7 +11,9 @@
         if (file_exists("views/".$a.".php")) {
             require_once("views/".$a.".php");
         }	else {
-            require_once("views/404.php");
+        ?>
+            <script>window.location.href = "index.php?action=404"</script> 
+        <?php
         }
     }
     else {

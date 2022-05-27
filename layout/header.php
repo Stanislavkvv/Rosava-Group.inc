@@ -32,22 +32,30 @@
                                 $isLogout = $_POST["isLogout"];
                                 if($isLogout=="true"){	
                                     session_unset();
-                                    header( 'Location: index.php' );
-                                    exit();
+                                    ?>
+                                        <script>window.location.href = "index.php"</script>
+                                    <?php
                                 }
                             } else {
                                 ?>
                                 <div class="content">
                                     <form action="index.php" method="POST">
-                                        <input type="hidden" name="isLogout" value="true">
+                                        <input type="hidden" name="isLogout">
                                         <button class="logout"><i class='bx bx-log-out'></i></button>
                                     </form>	
                                 </div>
+                                <script>document.querySelector("header ul.contacts li form button").addEventListener("click",function() {
+                                    if (window.confirm("Do you really want to log out?")) {
+                                        this.parentElement.querySelector("input").setAttribute("value","true")
+                                    } else {
+                                        this.parentElement.querySelector("input").setAttribute("value","false")
+                                    }
+                                })</script>
                                 <?php
                             }
                         } else { 
                     ?>
-                        <a class="signin" href="index.php?action=signin">Sign in</a>
+                        <a class="signin" href="index.php?action=login">Log In</a>
                     <?php
                         }
                     ?>

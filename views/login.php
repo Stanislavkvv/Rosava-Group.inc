@@ -25,20 +25,36 @@
                     ?>
                         <script>window.location.href = "index.php?action=logSuccess"</script> 
                     <?php
+                } else {
+                    $error = true;
                 }
             }
         }
         ?>  
         <main id="signIn">
+            <div class="blur"></div>
             <div class="container">
-                <?php if($error==true){?>  
-                <div class="signInError error">Invalid username or password</div>
-                <?php }?>
-                <form action="" method="post">
-                    <input type="text" name="login">
-                    <input type="password" name="password">
-                    <button type="submit">Sign in</button>
-                </form>
+                <div class="form__block">
+                    <div class="photo">
+                        <img src="img/Logo.png" alt="Logo">
+                    </div>
+                    <h2 class="title">Log In</h2>
+                    <form action="" method="post">
+                        <div class="formInput">
+                            <input type="text" name="login" required minlength="4" placeholder="Username" id="login">
+                            <img src="img/assets/login.png" alt="Login">
+                        </div>
+                        <div class="formInput">
+                            <input type="password" name="password" required minlength="8" placeholder="Password" id="password">
+                            <img src="img/assets/lock.png" alt="Login">
+                        </div>
+
+                        <button type="submit">Log In</button>
+                    </form>
+                    <?php if($error==true){?>  
+                        <div class="signInError error">Invalid username or password</div>
+                    <?php }?>
+                </div>
             </div>
         </main>
         <?php

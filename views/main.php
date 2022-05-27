@@ -45,11 +45,11 @@
             <div class="applyToDrive__form">
                 <h2>APPLY TO DRIVE FOR ROSAVA GROUP!</h2>
                 <form action="index.php" method="POST">
-                    <input type="text" maxlength="50" placeholder="Name" required name="name" id="name" pattern="[a-zA-Z]*">
+                    <input type="text" maxlength="50" placeholder="Name" required name="name" id="name" pattern="[a-zA-Z'-'\s]*">
 
                     <input type="email" placeholder="Email Address" required name="mail">
 
-                    <input type="tel" maxlength="20" placeholder="Phone Number" required name="tel">
+                    <input type="text" minlength="10" placeholder="Phone Number , example <?php echo CONFIG::getPhone()[0]["config_value"]?>" required name="tel" pattern="+1[0-9]{10}">
 
                     <input type="text" maxlength="50" placeholder="Zip Code" pattern="[0-9\s-]{4,6}" required name="code">
 

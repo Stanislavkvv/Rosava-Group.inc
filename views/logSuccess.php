@@ -1,20 +1,21 @@
-<main>
+<main id="success" class="message">
+    <div class="blur"></div>
     <div class="container">
-        <h1>asdasd</h1>
+        <div class="successBlock">
+            <div class="head">
+                <img src="img/assets/success.png" alt="Success">
+            </div>
+            <div class="body">
+                <p class="congrats">Congratulations! <br> You have successfully logged in.</p>
+                <a href="index.php">Main Page</a>
+                <?php
+                    if (isset($_SESSION["isAdmin"])&&$_SESSION["isAdmin"]==true) {
+                        ?>
+                            <a href="index.php?action=admin">Admin Panel</a>
+                        <?php
+                    }
+                ?>
+            </div>
+        </div>
     </div>
-    <script>
-        setTimeout(() => {
-            <?php
-                if (isset($_SESSION["isAdmin"])&&$_SESSION["isAdmin"]==true) {
-                    ?>
-                         window.location.href = "index.php?action=admin"
-                    <?php
-                } else { 
-            ?>
-                window.location.href = "index.php" 
-            <?php
-                }
-            ?>
-        }, 5000);
-    </script>
 </main>
