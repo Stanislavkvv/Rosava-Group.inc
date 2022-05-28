@@ -4,16 +4,16 @@
             <div class="links">
                 <h3 class="title">Quick Links</h3>
                 <ul>
-                    <li><a href="index.php">Home</a></li>
-                    <li><a href="index.php#about">About Us</a></li>
-                    <li><a href="#">Our Services</a></li>
-                    <li><a href="#">Why Choose us</a></li>
-                    <li><a href="#">Locations</a></li>
-                    <li><a href="#">Contacts</a></li>
+                <li><a href="index.php">Home</a></li>
+                <li><a href="index.php#about">About Us</a></li>
+                <li><a href="index.php#services">Our Services</a></li>
+                <li><a href="#">Why Choose us</a></li>
+                <li><a href="index.php#info">Locations</a></li>
+                <li><a href="index.php#info">Contacts</a></li>
                 </ul>
             </div>
             <div class="logo">
-                <a href="/"><img src="img/Logo.png" alt="Logo"></a>
+                <a href="index.php"><img src="img/Logo.png" alt="Logo"></a>
                 <p><?php echo CONFIG::getDescription()?></p>
             </div>
             <div class="contacts">

@@ -3,6 +3,7 @@
     require_once("models/database.php");
     require_once("models/user.php");
     require_once("models/config.php");
+    require_once("models/admin.php");
     require_once("layout/head.php");
     require_once("layout/header.php");
 

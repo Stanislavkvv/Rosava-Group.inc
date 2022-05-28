@@ -31,7 +31,7 @@
             }
         }
         ?>  
-        <main id="signIn">
+        <main id="signIn" class="message">
             <div class="blur"></div>
             <div class="container">
                 <div class="form__block">
@@ -41,11 +41,13 @@
                     <h2 class="title">Log In</h2>
                     <form action="" method="post">
                         <div class="formInput">
-                            <input type="text" name="login" required minlength="4" placeholder="Username" id="login">
+                            <label for="login">Username</label>
+                            <input type="text" name="login" required minlength="4" maxlength="32" placeholder="Username" id="login">
                             <img src="img/assets/login.png" alt="Login">
                         </div>
                         <div class="formInput">
-                            <input type="password" name="password" required minlength="8" placeholder="Password" id="password">
+                            <label for="password">Password</label>
+                            <input type="password" name="password" required minlength="8" maxlength="32" placeholder="Password" id="password">
                             <img src="img/assets/lock.png" alt="Login">
                         </div>
 

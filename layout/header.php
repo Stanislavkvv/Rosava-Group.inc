@@ -28,29 +28,29 @@
                             ?>
                         <a class="signin" href="index.php?action=admin">Admin</a>
                         <?php 
-                            if (!empty($_POST)&&isset($_POST["isLogout"])) {
+                            if (!empty($_POST)&&isset($_POST["isLogout"])&&$_POST["isLogout"]=="true") {
                                 $isLogout = $_POST["isLogout"];
-                                if($isLogout=="true"){	
-                                    session_unset();
-                                    ?>
-                                        <script>window.location.href = "index.php"</script>
-                                    <?php
-                                }
+                                session_unset();
+                                ?>
+                                    <script>window.location.href = "index.php"</script>
+                                <?php
                             } else {
                                 ?>
                                 <div class="content">
-                                    <form action="index.php" method="POST">
+                                    <form action="" method="POST">
                                         <input type="hidden" name="isLogout">
                                         <button class="logout"><i class='bx bx-log-out'></i></button>
                                     </form>	
                                 </div>
-                                <script>document.querySelector("header ul.contacts li form button").addEventListener("click",function() {
-                                    if (window.confirm("Do you really want to log out?")) {
-                                        this.parentElement.querySelector("input").setAttribute("value","true")
-                                    } else {
-                                        this.parentElement.querySelector("input").setAttribute("value","false")
-                                    }
-                                })</script>
+                                <script>
+                                    document.querySelector("header ul.contacts li form button").addEventListener("click",function() {
+                                        if (window.confirm("Do you really want to log out?")) {
+                                            this.parentElement.querySelector("input").setAttribute("value","true")
+                                        } else {
+                                            this.parentElement.querySelector("input").setAttribute("value","false")
+                                        }
+                                    })
+                                </script>
                                 <?php
                             }
                         } else { 
@@ -68,10 +68,10 @@
             <ul>
                 <li><a href="index.php">Home</a></li>
                 <li><a href="index.php#about">About Us</a></li>
-                <li><a href="#">Our Services</a></li>
+                <li><a href="index.php#services">Our Services</a></li>
                 <li><a href="#">Why Choose us</a></li>
-                <li><a href="#">Locations</a></li>
-                <li><a href="#">Contacts</a></li>
+                <li><a href="index.php#info">Locations</a></li>
+                <li><a href="index.php#info">Contacts</a></li>
             </ul>
         </div>
     </header> 

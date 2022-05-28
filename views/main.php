@@ -1,5 +1,5 @@
 <?php
-    if(isset($_POST)&&count($_POST)>0){
+    if(isset($_POST)&&isset($_POST["application"])){
         $mysqli = DATABASE::Connect();
         $sql = "INSERT INTO `application` (`App_name`,`App_Mail`,`App_Phone`,`App_Code`,`App_Services`,`App_Driving_Experience`,`App_HowKnow`) VALUES (?,?,?,?,?,?,?);"; // SQL with parameters
         $stmt = $mysqli->prepare($sql);
@@ -17,7 +17,7 @@
             <h2>Efficient. Safe. Reliable.</h2>
         </div>
     </section>
-    <section class="services">
+    <section class="services" id="services">
         <div class="container">
             <h1>ROSAVA GROUP</h1>
             <h3><?php echo CONFIG::getDescription()?></h3>
@@ -45,6 +45,8 @@
             <div class="applyToDrive__form">
                 <h2>APPLY TO DRIVE FOR ROSAVA GROUP!</h2>
                 <form action="index.php" method="POST">
+                    <input type="hidden" name="application">
+
                     <input type="text" maxlength="50" placeholder="Name" required name="name" id="name" pattern="[a-zA-Z'-'\s]*">
 
                     <input type="email" placeholder="Email Address" required name="mail">
@@ -62,9 +64,9 @@
 
                     <select name="driving_experience" id="driving_experience" required>
                         <option value="">CDL Driving Experience</option>
-                        <option value="No experience">No experience</option>
-                        <option value="Under 1 year">Under 1 year</option>
-                        <option value="More than 1 year">More than 1 year</option>
+                        <option value="0">No experience</option>
+                        <option value="<1">Under 1 year</option>
+                        <option value="1+">More than 1 year</option>
                     </select>
 
                     <select name="contact_about_us" id="contact_about_us" required>
