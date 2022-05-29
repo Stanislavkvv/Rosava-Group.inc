@@ -71,12 +71,23 @@
 			$stmt = $mysqli->prepare($sql);
 			$stmt->bind_param("s",$POST["login"]);
 			$stmt->execute();
-			
-			// $sql = "UPDATE `users` SET `password` = '?' WHERE `users`.`id` = 5";
-			// $stmt = $mysqli->prepare($sql);
-			// $password = password_hash($POST["password"], PASSWORD_BCRYPT, ['cost' => 12]);
-			// $stmt->bind_param("s",$password);
-			// $stmt->execute();
+		}
+		public static function CheckOldPassword($password){
+			$mysqli = DATABASE::Connect();
+			$sql = "SELECT `users`.`password` FROM `users` WHERE `users`.`id` = 5";
+			$stmt = $mysqli->prepare($sql);
+			$stmt->execute();
+			$passwordDB = $stmt->get_result()->fetch_all(MYSQLI_ASSOC)[0]["password"];
+			return password_verify($password, $passwordDB);
+		}
+		public static function SetPassword($password){
+			$hashPassword = password_hash($password, PASSWORD_BCRYPT, ['cost' => 12]);
+			$mysqli = DATABASE::Connect();
+			$sql = "UPDATE `users` SET `password` = ? WHERE `users`.`id` = 5";
+			$stmt = $mysqli->prepare($sql);
+			$stmt->bind_param("s",$hashPassword);
+			$stmt->execute();
+			return $hashPassword;
 		}
 		public static function GetUsername(){
 			$mysqli = DATABASE::Connect();

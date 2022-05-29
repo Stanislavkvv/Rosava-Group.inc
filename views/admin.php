@@ -25,7 +25,10 @@
                                 ADMIN::SetSettings($_POST);
                             } else if($_POST["action"]=="personalSettings") {
                                 ADMIN::SetUsername($_POST);
-                                var_dump($_POST);
+                                $oldPasswordSimilarity = ADMIN::CheckOldPassword($_POST["oldPassword"]);
+                                if($oldPasswordSimilarity==true){
+                                    ADMIN::SetPassword($_POST["newPassword"]);
+                                }
                             }
                         }
                     }
@@ -154,11 +157,11 @@
                                     <p><img src="img/assets/lock.png" alt="Password">Password</p>
                                     <a class="passwordRecoveryOpen"><img src="img/assets/pencil.png" alt="Password">Change Password</a>
                                 </div>
-                                <div class="passwordRecovery">
+                                <div class="passwordRecovery <?php if(isset($oldPasswordSimilarity)&&$oldPasswordSimilarity==false){ echo "active" ;}?>">
                                     <div class="inputBlock">
-                                        <p>Old Password</p>
+                                        <p <?php if(isset($oldPasswordSimilarity)&&$oldPasswordSimilarity==false){ echo "class='error'"; }?>><?php if(isset($oldPasswordSimilarity)&&$oldPasswordSimilarity==false){ echo "Invalid"; }?> Old Password</p>
                                         <div class="input">
-                                            <input type="password" name="oldPassword" minlength="8" maxlength="32" placeholder="Old Password">
+                                            <input type="password" name="oldPassword" minlength="8" maxlength="32" placeholder="Old Password" <?php if(isset($oldPasswordSimilarity)&&$oldPasswordSimilarity==false){ echo "class='error'"; }?>>
                                             <i class='bx bx-low-vision passwordImg'></i>
                                             <img src="img/assets/eye.png" alt="Password" class="passwordImg active">
                                         </div>

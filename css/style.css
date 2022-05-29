@@ -764,6 +764,7 @@ main#admin section.content .content__block__child{
     border-radius: 10px;
     align-items: center;
     justify-content: space-between;
+    z-index: 2;
 }
 main#admin section.content .content__block__child.passwordRecovery{
     flex-direction: column;
@@ -776,11 +777,11 @@ main#admin section.content .content__block__child.passwordRecovery .head{
     display: flex;
     justify-content: space-between;
     padding-bottom: .5rem;
-    z-index: 2;
     padding: .5rem 1rem;
     border-radius: 10px;
     background-color: var(--color-3);
     transition: all .7s ease;
+    z-index: 2;
 }
 main#admin section.content .content__block__child.passwordRecovery .head.active{
     border-radius: 10px 10px 0 0;
@@ -791,19 +792,19 @@ main#admin section.content .content__block__child.passwordRecovery .head button{
 main#admin section.content .content__block__child.passwordRecovery .passwordRecovery{
     padding-top: 1rem;
     transition: all .7s ease;
-    z-index: 1;
+    z-index: -1;
     border-top: .05rem solid #f1f1f1;
     width: 100%;
-    opacity: 0;
     position: absolute;
     left: 0;
     bottom: 0;
     background-color: var(--color-3);
     padding-bottom: 1rem;
+    display: none;
     border-radius: 0 0 10px 10px;
 }
 main#admin section.content .content__block__child.passwordRecovery .passwordRecovery.active{
-    opacity: 1;
+    display: unset;
 }
 main#admin section.content .content__block__child.passwordRecovery .passwordRecovery .inputBlock{
     display: flex;
@@ -814,6 +815,9 @@ main#admin section.content .content__block__child.passwordRecovery .passwordReco
 main#admin section.content .content__block__child.passwordRecovery .passwordRecovery .inputBlock p{
     width: 50%;
     justify-content: center;
+}
+main#admin section.content .content__block__child.passwordRecovery .passwordRecovery .inputBlock p.error{
+    color: red;
 }
 main#admin section.content .content__block__child.passwordRecovery .passwordRecovery .inputBlock .input{
     width: 25%;
@@ -836,6 +840,10 @@ main#admin section.content .content__block__child.passwordRecovery .passwordReco
 main#admin section.content .content__block__child.passwordRecovery .passwordRecovery input{
     width: 100%;
     padding-right: 2.2rem;
+    border: .1rem solid transparent;
+}
+main#admin section.content .content__block__child.passwordRecovery .passwordRecovery input.error{
+    border-color: red;
 }
 main#admin section.content .content__block__child.passwordRecovery button{
     width: 100%;

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 27, 2022 at 01:36 PM
+-- Generation Time: May 29, 2022 at 11:11 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -28,22 +28,27 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `application` (
-  `ID` int(11) NOT NULL,
+  `App_ID` int(11) NOT NULL,
   `App_Name` varchar(50) NOT NULL,
   `App_Mail` varchar(80) NOT NULL,
   `App_Phone` varchar(15) NOT NULL,
   `App_Code` varchar(20) NOT NULL,
   `App_Services` varchar(15) NOT NULL,
   `App_Driving_Experience` varchar(15) NOT NULL,
-  `App_HowKnow` varchar(20) NOT NULL
+  `App_HowKnow` varchar(20) NOT NULL,
+  `App_Checked` tinyint(4) NOT NULL,
+  `App_DateTime` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `application`
 --
 
-INSERT INTO `application` (`ID`, `App_Name`, `App_Mail`, `App_Phone`, `App_Code`, `App_Services`, `App_Driving_Experience`, `App_HowKnow`) VALUES
-(24, 'Serhiy Paziuk', 'paz.serhiy@gmail.com', '+380950218131', '59400', 'Solo', 'Under 1 year', 'Referral');
+INSERT INTO `application` (`App_ID`, `App_Name`, `App_Mail`, `App_Phone`, `App_Code`, `App_Services`, `App_Driving_Experience`, `App_HowKnow`, `App_Checked`, `App_DateTime`) VALUES
+(24, 'Serhiy Paziuk', 'paz.serhiy@gmail.com', '+380950218131', '59400', 'Solo', '<1', 'Referral', 0, '2022-05-28 12:07:54'),
+(25, 'Serhiy', 'paz.serhiy@gmail.com', '+380950218131', '59400', 'Owner', '0', 'Craigslist', 0, '2022-05-28 12:08:37'),
+(26, 'Serhiy', 'paz.serhiy@gmail.com', '+380950218131', '59400', 'Solo', '0', 'Facebook', 1, '2022-05-28 12:12:52'),
+(27, 'Slavik', 'paz.serhiy@gmail.com', '+380950218131', '59400', 'Team', '1+', 'Google', 1, '2022-05-28 22:27:11');
 
 -- --------------------------------------------------------
 
@@ -67,7 +72,7 @@ INSERT INTO `config` (`config_id`, `config_key`, `config_value`, `config_timeAdd
 (2, 'phone', '+17736278837', '2022-05-26 22:47:29'),
 (3, 'fax', '+13312252028', '2022-05-26 22:47:50'),
 (4, 'location', '4612 Hirschberg Ave Schiller Park, IL 60176 USA', '2022-05-26 22:49:06'),
-(5, 'mail', 'rosavaGroup@yahoo.com', '2022-05-26 22:50:10'),
+(5, 'mail', 'rosavagroup@yahoo.com', '2022-05-26 22:50:10'),
 (6, 'facebook', 'https://www.facebook.com', '2022-05-26 22:52:39'),
 (7, 'instagram', 'https://www.instagram.com', '2022-05-26 22:53:10'),
 (8, 'siteDescription', 'Rosava group is a rapidly growing company located in Chicagoland area, operating in 48 states with more then 20 trucks', '2022-05-26 22:56:15');
@@ -90,7 +95,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `isAdmin`, `username`, `password`) VALUES
-(5, 1, 'admin', '$2y$12$e1MIES4UJ2ZHKMsiv5x/fOFPErnTGZBUXMhs.oTUDmDHt79HsP7zG');
+(5, 1, 'admin', '$2y$12$uy/Lqohqr9fw06d.NeXNue5XtSKEs93aP69SXV6eK2hrSNRDKcLNC');
 
 --
 -- Indexes for dumped tables
@@ -100,7 +105,7 @@ INSERT INTO `users` (`id`, `isAdmin`, `username`, `password`) VALUES
 -- Indexes for table `application`
 --
 ALTER TABLE `application`
-  ADD PRIMARY KEY (`ID`);
+  ADD PRIMARY KEY (`App_ID`);
 
 --
 -- Indexes for table `config`
@@ -122,7 +127,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `application`
 --
 ALTER TABLE `application`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `App_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT for table `config`
