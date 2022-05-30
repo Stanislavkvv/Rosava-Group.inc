@@ -23,7 +23,12 @@
                     }
                     $_SESSION["auth"] = true;
                     ?>
-                        <script>window.location.href = "index.php?action=logSuccess"</script> 
+                        <script>
+                            localStorage.removeItem('signInError')
+                            localStorage.removeItem('signInEndTime')
+                            localStorage.removeItem('signInErrorCount')
+                            window.location.href = "index.php?action=logSuccess"
+                        </script> 
                     <?php
                 } else {
                     $error = true;
@@ -39,7 +44,7 @@
                         <img src="img/Logo.png" alt="Logo">
                     </div>
                     <h2 class="title">Log In</h2>
-                    <form action="" method="post">
+                    <form action="" method="post" onsubmit="formSignInSubmit(event)">
                         <div class="formInput">
                             <label for="login">Username</label>
                             <input type="text" name="login" required minlength="4" maxlength="32" placeholder="Username" id="login">
@@ -53,9 +58,30 @@
 
                         <button type="submit">Log In</button>
                     </form>
+                    <div class="signInError error" id="wait">Wait 5 min. and try again</div>
                     <?php if($error==true){?>  
-                        <div class="signInError error">Invalid username or password</div>
-                    <?php }?>
+                        <div class="signInError error active" id="invalid">Invalid username or password</div>
+                        <script>
+                            if(!localStorage.getItem('signInError')){
+                                if(localStorage.getItem('signInErrorCount')){
+                                    let n = +localStorage.getItem('signInErrorCount');
+                                    if(n==5){
+                                        localStorage.setItem('signInErrorCount',1)
+                                        localStorage.setItem('signInError',true)
+                                        document.querySelector("#wait").classList.add("active")
+                                        let CurrentTime = new Date();
+                                        CurrentTime.setMinutes(CurrentTime.getMinutes() + 5);
+                                        localStorage.setItem('signInEndTime',CurrentTime)
+                                    } else {
+                                        n += 1
+                                        localStorage.setItem('signInErrorCount',n)
+                                    }
+                                } else {
+                                    localStorage.setItem('signInErrorCount',1)
+                                }
+                            }
+                        </script>
+                    <?php }?> 
                 </div>
             </div>
         </main>

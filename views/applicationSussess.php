@@ -6,7 +6,7 @@
                 <img src="img/assets/success.png" alt="Success">
             </div>
             <div class="body">
-                <p class="congrats">Congratulations! <br> Your application has been successfully sent.</p>
+                <p class="congrats">Congratulations! <br> Your appointment has been successfully sent.</p>
                 <a href="index.php">Main Page</a>
             </div>
         </div>

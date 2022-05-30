@@ -6,7 +6,12 @@
         $stmt->bind_param("sssssss",$_POST["name"],$_POST["mail"],$_POST["tel"],$_POST["code"],$_POST["services"],$_POST["driving_experience"],$_POST["contact_about_us"]); 
         $stmt->execute();
         ?>
-        <script>window.location.href = "index.php?action=applicationSussess"</script> 
+        <script>
+            let applicationEndTime = new Date();
+            applicationEndTime.setHours(applicationEndTime.getHours() + 24)
+            localStorage.setItem('applicationEndTime',applicationEndTime)
+            window.location.href = "index.php?action=applicationSussess"
+        </script> 
         <?php
     }
 ?>
@@ -44,7 +49,7 @@
             </div>
             <div class="applyToDrive__form">
                 <h2>APPLY TO DRIVE FOR ROSAVA GROUP!</h2>
-                <form action="index.php" method="POST">
+                <form action="index.php" method="POST" onsubmit="formApplicationSubmit(event)">
                     <input type="hidden" name="application">
 
                     <input type="text" maxlength="50" placeholder="Name" required name="name" id="name" pattern="[a-zA-Z'-'\s]*">
@@ -81,6 +86,7 @@
                         <button type="reset">RESET</button>
                         <button type="submit">SUBMIT</button>
                     </div>
+                    <p id="wait"><img src="img/assets/warning.png" alt="Warning">You can send 1 application in 24 hours!<img src="img/assets/warning.png" alt="Warning"></p>
                 </form>
             </div>
         </div>

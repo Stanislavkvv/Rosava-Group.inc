@@ -372,6 +372,23 @@ section.applyToDrive .container .applyToDrive__form form button[type="reset"]{
 section.applyToDrive .container .applyToDrive__form form button:hover{
     transform: translate(.1rem,-.1rem);
 }
+section.applyToDrive .container .applyToDrive__form form #wait{
+    padding: .5rem;
+    margin: 1rem 0 0;
+    background-color: red;
+    color: var(--color-3);
+    border-radius: 10px;
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    font-family: var(--font-4);
+}
+section.applyToDrive .container .applyToDrive__form form #wait.active{
+    display: flex;
+}
+section.applyToDrive .container .applyToDrive__form form #wait img{
+    width: 2rem;
+}
 section.applyToDrive .container .applyToDrive__photo{
     margin-right: 5rem;
     display: flex;
@@ -501,6 +518,10 @@ main#signIn .container .form__block .signInError.error{
     color:  var(--color-3);
     font-family: var(--font-1);
     padding: .5rem;
+    display: none;
+}
+main#signIn .container .form__block .signInError.error.active{
+    display: unset;
 }
 
 main#success{

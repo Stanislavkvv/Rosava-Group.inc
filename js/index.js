@@ -1,15 +1,21 @@
 "use strict"
 
-// const headerBody = document.querySelector("header nav.body");
-// const headerHeadHeight = document.querySelector("header nav.head").offsetHeight;
+function formSignInSubmit(event){
+    if(new Date(localStorage.getItem('signInEndTime'))>new Date()){
+        event.preventDefault();
+        document.querySelector("#wait").classList.add("active")
+        document.querySelector("#invalid").classList.remove("active")
+    } else {
+        localStorage.removeItem('signInError')
+        localStorage.removeItem('signInEndTime')
+    }
+}
 
-// window.addEventListener("scroll",function(){
-//     if(Math.floor(window.scrollY) >= headerHeadHeight){
-//         headerBody.style.position = "fixed"
-//         document.querySelector("main").style.marginTop = headerBody.offsetHeight+"px"
-//     }
-//     if(Math.floor(window.scrollY) < headerHeadHeight){
-//         headerBody.style.position = "static"
-//         document.querySelector("main").style.marginTop = "0px"
-//     }
-// })
+function formApplicationSubmit(event){
+    if(new Date(localStorage.getItem('applicationEndTime'))>new Date()){
+        event.preventDefault();
+        document.querySelector("#wait").classList.add("active")
+    } else {
+        localStorage.removeItem('applicationEndTime')
+    }
+}
