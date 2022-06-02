@@ -61,5 +61,12 @@
 			$stmt->execute();
 			return $stmt->get_result()->fetch_all(MYSQLI_ASSOC)[0]["config_value"];
 		}
+		public static function sendApplication($POST){
+			$mysqli = DATABASE::Connect();
+			$sql = "INSERT INTO `application` (`App_name`,`App_Mail`,`App_Phone`,`App_Code`,`App_Services`,`App_Driving_Experience`,`App_HowKnow`) VALUES (?,?,?,?,?,?,?);"; // SQL with parameters
+			$stmt = $mysqli->prepare($sql);
+			$stmt->bind_param("sssssss",$POST["name"],$POST["mail"],$POST["tel"],$POST["code"],$POST["services"],$POST["driving_experience"],$POST["contact_about_us"]); 
+			$stmt->execute();
+		}
 	}
 ?>

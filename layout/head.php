@@ -53,6 +53,8 @@
 
         <!-- What image will display in share -->
         <meta property="og:image" content="img/Logo.png">
+        <meta property="og:image:secure_url" content="img/Logo.png">
+        <meta property="og:image:type" content="image/png">
 
         <!-- Site URL -->
         <meta property="og:url" content="">

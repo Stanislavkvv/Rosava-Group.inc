@@ -1,10 +1,6 @@
 <?php
     if(isset($_POST)&&isset($_POST["application"])){
-        $mysqli = DATABASE::Connect();
-        $sql = "INSERT INTO `application` (`App_name`,`App_Mail`,`App_Phone`,`App_Code`,`App_Services`,`App_Driving_Experience`,`App_HowKnow`) VALUES (?,?,?,?,?,?,?);"; // SQL with parameters
-        $stmt = $mysqli->prepare($sql);
-        $stmt->bind_param("sssssss",$_POST["name"],$_POST["mail"],$_POST["tel"],$_POST["code"],$_POST["services"],$_POST["driving_experience"],$_POST["contact_about_us"]); 
-        $stmt->execute();
+        CONFIG::sendApplication($_POST);
         ?>
         <script>
             let applicationEndTime = new Date();
@@ -27,17 +23,17 @@
             <h1>ROSAVA GROUP</h1>
             <h3><?php echo CONFIG::getDescription()?></h3>
             <div class="services__service__block">
-                <div class="services__service" href="#">
-                    <a href="#">Solo Driver</a>
-                    <img src="img/assets/solo_driver.jpg" alt="Solo Driver">
+                <div class="services__service">
+                    <a href="index.php?action=jobs&type=solo">Solo Driver</a>
+                    <img src="img/assets/solo.jpg" alt="Solo Driver">
                 </div>
-                <div class="services__service" href="#">
-                    <a href="#">Owner Operator</a>
-                    <img src="img/assets/own_operator.jpg" alt="Solo Driver">
+                <div class="services__service">
+                    <a href="index.php?action=jobs&type=owner">Owner Operator</a>
+                    <img src="img/assets/owner.jpg" alt="Solo Driver">
                 </div>
-                    <div class="services__service" href="#">
-                    <a href="#">Team Drivers</a>
-                    <img src="img/assets/team_drivers.jpg" alt="Solo Driver">
+                    <div class="services__service">
+                    <a href="index.php?action=jobs&type=team">Team Drivers</a>
+                    <img src="img/assets/team.jpg" alt="Solo Driver">
                 </div>
             </div>
         </div>
@@ -52,7 +48,7 @@
                 <form action="index.php" method="POST" onsubmit="formApplicationSubmit(event)">
                     <input type="hidden" name="application">
 
-                    <input type="text" maxlength="50" placeholder="Name" required name="name" id="name" pattern="[a-zA-Z'-'\s]*">
+                    <input type="text" placeholder="Name" required name="name" id="name" pattern="[a-zA-Z'-'\s]*">
 
                     <input type="email" placeholder="Email Address" required name="mail">
 

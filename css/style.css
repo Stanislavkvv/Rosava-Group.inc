@@ -20,6 +20,7 @@ body{
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    overflow-x: hidden;
 }
 
 main{
@@ -317,42 +318,42 @@ section.services .container .services__service p{
     letter-spacing: 0;
 }
 
-section.applyToDrive{
+.applyToDrive{
     margin: 0 0 3rem;
     padding-top: 1.5rem;
     border-top: .1rem solid #f4f4f4;
 }
-section.applyToDrive .container{
+.applyToDrive .container{
     display: flex;
 }
-section.applyToDrive .container .applyToDrive__form,
-section.applyToDrive .container .applyToDrive__photo{
+.applyToDrive .container .applyToDrive__form,
+.applyToDrive .container .applyToDrive__photo{
     flex: 1;
 }
-section.applyToDrive .container .applyToDrive__form h2{
+.applyToDrive .container .applyToDrive__form h2{
     font-family: var(--font-1);
     font-weight: 400;
     font-size: 1.8rem;
     color: #333;
     margin-bottom: 1rem;
 }
-section.applyToDrive .container .applyToDrive__form form{
+.applyToDrive .container .applyToDrive__form form{
     display: flex;
     flex-direction: column;
 }
-section.applyToDrive .container .applyToDrive__form form input,
-section.applyToDrive .container .applyToDrive__form form select{
+.applyToDrive .container .applyToDrive__form form input,
+.applyToDrive .container .applyToDrive__form form select{
     border: .05rem solid #eee;
     padding: 1rem;
     background-color: #eee;
     margin-bottom: 1rem;
 }
 
-section.applyToDrive .container .applyToDrive__form form .btns{
+.applyToDrive .container .applyToDrive__form form .btns{
     display: flex;
     justify-content: space-between;
 }
-section.applyToDrive .container .applyToDrive__form form button{
+.applyToDrive .container .applyToDrive__form form button{
     color: var(--color-3);
     padding: .5rem 2rem;
     font-size: 1.2rem;
@@ -363,16 +364,16 @@ section.applyToDrive .container .applyToDrive__form form button{
     -moz-box-shadow: -2px 5px 57px 0px rgba(0, 79, 232, 0.2);
     box-shadow: -2px 5px 57px 0px rgba(0, 79, 232, 0.2);
 }
-section.applyToDrive .container .applyToDrive__form form button[type="submit"]{
+.applyToDrive .container .applyToDrive__form form button[type="submit"]{
     background-color: #0f8040;
 }
-section.applyToDrive .container .applyToDrive__form form button[type="reset"]{
+.applyToDrive .container .applyToDrive__form form button[type="reset"]{
     background-color: var(--color-6);
 }
-section.applyToDrive .container .applyToDrive__form form button:hover{
+.applyToDrive .container .applyToDrive__form form button:hover{
     transform: translate(.1rem,-.1rem);
 }
-section.applyToDrive .container .applyToDrive__form form #wait{
+.applyToDrive .container .applyToDrive__form form #wait{
     padding: .5rem;
     margin: 1rem 0 0;
     background-color: red;
@@ -383,24 +384,157 @@ section.applyToDrive .container .applyToDrive__form form #wait{
     align-items: center;
     font-family: var(--font-4);
 }
-section.applyToDrive .container .applyToDrive__form form #wait.active{
+.applyToDrive .container .applyToDrive__form form #wait.active{
     display: flex;
 }
-section.applyToDrive .container .applyToDrive__form form #wait img{
+.applyToDrive .container .applyToDrive__form form #wait img{
     width: 2rem;
 }
-section.applyToDrive .container .applyToDrive__photo{
+.applyToDrive .container .applyToDrive__photo{
     margin-right: 5rem;
     display: flex;
     align-items: center;
     position: relative;
 }
-section.applyToDrive .container .applyToDrive__photo img{
+.applyToDrive .container .applyToDrive__photo img{
     /* width: 100%; */
     height: calc(100% - 7rem);
     position: absolute;
     top: 3rem;
     right: 0;
+}
+
+section.jobs .container{
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+}
+section.jobs .container .hello{
+    display: flex;
+    height: 30rem;
+}
+section.jobs .container .hello .info,
+section.jobs .container .hello .photo{
+    flex: 1;
+    display: flex;
+}
+section.jobs .container .hello .info{
+    margin-right: 2rem;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+section.jobs .container .hello .info .title{
+    text-align: center;
+    margin-top: 1.5rem;
+    font-size: 4rem;
+    font-family: var(--font-4);
+    font-weight: 700;
+}
+section.jobs .container .hello .info .desc{
+    margin-top: 2rem;
+    font-size: 1.2rem;
+    text-align: center;
+    line-height: 2rem;
+    font-family: var(--font-3);
+}
+section.jobs .container .hello .info a{
+    padding: 1rem 2.5rem;
+    margin-top: 2rem;
+    font-family: var(--font-4);
+    font-weight: 500;
+    background-color: var(--color-6);
+    transition: all .5s ease;
+    color: var(--color-3);
+    text-decoration: none;
+}
+section.jobs .container .hello .info a:hover{
+    background-color: var(--color-7);
+}
+section.jobs .container .hello .photo{
+    position: relative;
+    overflow: hidden;
+}
+section.jobs .container .hello .photo img.owner{
+    left: 37%;
+}
+section.jobs .container .hello .photo img.team{
+    left: 30%;
+}
+section.jobs .container .hello .photo img{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%,0);
+    height: 100%;
+}
+section.jobs .container .need{
+    margin: 5rem 0 3rem;
+    display: flex;
+}
+section.jobs .container .need .title{
+    font-family: var(--font-4);
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+section.jobs .container .need .benefits,
+section.jobs .container .need .requirements{
+    flex: 1;
+    padding: 3rem 2.5rem;
+}
+section.jobs .container .need .requirements .title{
+    font-size: 3rem;
+}
+section.jobs .container .need .benefits .title{
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+section.jobs .container .need .requirements{
+    background-color: var(--color-4);
+    color: var(--color-3);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+section.jobs .container .need .requirements ul{
+    margin: 0;
+    padding: 0 0 0 1rem;
+}
+section.jobs .container .need .requirements ul li{
+    list-style: inside;
+    font-size: 1.2rem;
+    font-family: var(--font-4);
+}
+section.jobs .container .need .requirements ul li:not(:first-child){
+    margin-top: .5rem;
+}
+section.jobs .container .need .benefits{
+    margin-left: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+section.jobs .container .need .benefits ul li{
+    font-family: var(--font-1);
+    font-weight: 500;
+    font-size: 1.2rem;
+}
+section.jobs .container .need .benefits ul li:not(:first-child){
+    margin-top: 1rem;
+}
+section.jobs .container .applyToDrive{
+    margin: 0;
+}
+section.jobs .container .applyToDrive .container{
+    flex-direction: row-reverse;
+}
+section.jobs .container .applyToDrive .container .applyToDrive__photo{
+    margin-right: 0;
+    margin-left: 3rem;
+}
+section.jobs .container .applyToDrive .container .applyToDrive__photo img{
+    left: 0;
+    right: unset;
 }
 
 main#signIn{
