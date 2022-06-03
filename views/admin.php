@@ -1,5 +1,8 @@
 <?php
     if (isset($_SESSION["isAdmin"])&&$_SESSION["isAdmin"]==true){
+        if(isset($_GET["view"])&&$_GET["view"]=="applications"){
+            $_POST["action"]="applications";
+        }
         ?>
         <main id="admin">
             <div class="container">
@@ -18,7 +21,7 @@
                     if(!empty($_POST)){
                         if(isset($_POST["action"])){
                             if($_POST["action"]=="applications"){
-                                if($_POST["isCheck"]=="true"){
+                                if(isset($_POST["isCheck"])&&$_POST["isCheck"]=="true"){
                                     ADMIN::CheckApplicationById($_POST["check"]);
                                 }
                             } else if($_POST["action"]=="settings") {
@@ -55,10 +58,9 @@
                                     <td>Name</td>
                                     <td>Mail</td>
                                     <td>Phone</td>
-                                    <td style="text-align:center;">Zip Code</td>
                                     <td style="text-align:center;">Need</td>
                                     <td style="text-align:center;">Driver exp.</td>
-                                    <td style="text-align:center;">Rumor</td>
+                                    <td style="text-align:center;">Date</td>
                                     <td style="text-align:center;">Actions</td>
                                 </tr>
                             </thead>
@@ -68,14 +70,14 @@
                                 ?>  
                                     <tr>
                                         <td style="text-align:center;"><?php echo $applications[$i]["App_ID"]?></td>
-                                        <td><?php echo $applications[$i]["App_Name"]?></td>
-                                        <td><a href="mailto:<?php echo $applications[$i]["App_Mail"]?>"><?php echo $applications[$i]["App_Mail"]?></a></td>
-                                        <td><a href="tel:<?php echo $applications[$i]["App_Phone"]?>"><?php echo $applications[$i]["App_Phone"]?></a></td>
-                                        <td style="text-align:center;"><?php echo $applications[$i]["App_Code"]?></td>
-                                        <td style="text-align:center;"><?php echo $applications[$i]["App_Services"]?></td>
-                                        <td style="text-align:center;"><?php echo $applications[$i]["App_Driving_Experience"]?></td>
-                                        <td style="text-align:center;"><?php echo $applications[$i]["App_HowKnow"]?></td>
-                                        <td style="text-align:center;">
+                                        <td class="name"><?php echo $applications[$i]["App_Name"]?></td>
+                                        <td class="mail"><a href="mailto:<?php echo $applications[$i]["App_Mail"]?>"><?php echo $applications[$i]["App_Mail"]?></a></td>
+                                        <td class="phone"><a href="tel:<?php echo $applications[$i]["App_Phone"]?>"><?php echo $applications[$i]["App_Phone"]?></a></td>
+                                        <td class="need" style="text-align:center;"><?php echo $applications[$i]["App_Services"]?></td>
+                                        <td class="exp" style="text-align:center;"><?php echo $applications[$i]["App_Driving_Experience"]?></td>
+                                        <td class="date" style="text-align:center;"><?php echo $applications[$i]["App_DateTime"]?></td>
+                                        <td class="act" style="text-align:center;">
+                                            <a class="view" href="index.php?action=viewApplication&id=<?php echo $applications[$i]["App_ID"]?>"><img src="img/assets/eye.png" alt="View"></a>
                                             <?php if($applications[$i]["App_Checked"]==1){?>
                                                 <img src="img/assets/checked.png" alt="Checked">
                                             <?php } else { ?>

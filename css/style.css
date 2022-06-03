@@ -783,6 +783,10 @@ main#admin .buttn{
     font-family: var(--font-4);
     transition: all .5s ease;
 }
+main#admin .buttn img{
+    margin-right: 1rem;
+    width: 2rem;
+}
 main#admin .buttn:hover{
     background-color: var(--color-7);
 }
@@ -858,7 +862,12 @@ main#admin section.content table thead tr td{
 main#admin section.content table tr td{
     border-bottom: none;
 }
-main#admin section.content table tr td a{
+main#admin section.content table tr td.act{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+main#admin section.content table tr td a:not(a.view){
     text-decoration: none;
     border-radius: 10px;
     padding: .5rem;
@@ -882,7 +891,7 @@ main#admin section.content table tr td button:hover,
 main#admin section.content form#personalSettings a.passwordRecoveryOpen:hover{
     transform: translate(0,-.2rem);
 }
-main#admin section.content table tr td a:hover,
+main#admin section.content table tr td a:hover:not(a.view),
 main#admin section.content form#personalSettings a.passwordRecoveryOpen:hover{
     background-color: var(--color-6);
     color: var(--color-3);

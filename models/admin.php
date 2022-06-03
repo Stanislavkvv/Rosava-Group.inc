@@ -3,7 +3,14 @@
 	{
 		public static function getApplications(){
 			$mysqli = DATABASE::Connect();
-			$sql = "SELECT * FROM `application` ORDER BY `application`.`App_Checked` ASC, `application`.`App_DateTime` DESC";
+			$sql = "SELECT * FROM `application` ORDER BY `application`.`App_Checked` ASC, `application`.`App_DateTime` ASC";
+			$stmt = $mysqli->prepare($sql);
+			$stmt->execute();
+			return $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+		}
+		public static function getApplicationById($id){
+			$mysqli = DATABASE::Connect();
+			$sql = "SELECT * FROM `application` WHERE `application`.`App_ID` = $id";
 			$stmt = $mysqli->prepare($sql);
 			$stmt->execute();
 			return $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
