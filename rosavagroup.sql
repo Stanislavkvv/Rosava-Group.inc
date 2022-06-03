@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 29, 2022 at 11:11 AM
+-- Generation Time: Jun 03, 2022 at 03:07 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -45,10 +45,11 @@ CREATE TABLE `application` (
 --
 
 INSERT INTO `application` (`App_ID`, `App_Name`, `App_Mail`, `App_Phone`, `App_Code`, `App_Services`, `App_Driving_Experience`, `App_HowKnow`, `App_Checked`, `App_DateTime`) VALUES
-(24, 'Serhiy Paziuk', 'paz.serhiy@gmail.com', '+380950218131', '59400', 'Solo', '<1', 'Referral', 0, '2022-05-28 12:07:54'),
+(24, 'Serhiy Paziuk', 'paz.serhiy@gmail.com', '+380950218131', '59400', 'Solo', '<1', 'Referral', 1, '2022-05-28 12:07:54'),
 (25, 'Serhiy', 'paz.serhiy@gmail.com', '+380950218131', '59400', 'Owner', '0', 'Craigslist', 0, '2022-05-28 12:08:37'),
 (26, 'Serhiy', 'paz.serhiy@gmail.com', '+380950218131', '59400', 'Solo', '0', 'Facebook', 1, '2022-05-28 12:12:52'),
-(27, 'Slavik', 'paz.serhiy@gmail.com', '+380950218131', '59400', 'Team', '1+', 'Google', 1, '2022-05-28 22:27:11');
+(27, 'Slavik', 'paz.serhiy@gmail.com', '+380950218131', '59400', 'Team', '1+', 'Google', 1, '2022-05-28 22:27:11'),
+(28, 'Serhiy Paziuk', 'paz.serhiy@gmail.com', '+380950218131', '59400', 'Team', '<1', 'Craigslist', 0, '2022-06-02 22:01:43');
 
 -- --------------------------------------------------------
 
@@ -127,7 +128,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `application`
 --
 ALTER TABLE `application`
-  MODIFY `App_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `App_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT for table `config`

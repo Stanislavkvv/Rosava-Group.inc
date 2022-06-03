@@ -4,7 +4,7 @@
             $_POST["action"]="applications";
         }
         ?>
-        <main id="admin">
+        <main id="admin" class="admin">
             <div class="container">
                 <aside>
                     <a href="index.php" class="logo">
@@ -54,14 +54,14 @@
                         <table class="table table-hover">
                             <thead>
                                 <tr>
-                                    <td style="text-align:center;">ID</td>
-                                    <td>Name</td>
-                                    <td>Mail</td>
-                                    <td>Phone</td>
-                                    <td style="text-align:center;">Need</td>
-                                    <td style="text-align:center;">Driver exp.</td>
-                                    <td style="text-align:center;">Date</td>
-                                    <td style="text-align:center;">Actions</td>
+                                    <td style="text-align:center;">№</td>
+                                    <td class="name">Name</td>
+                                    <td class="mail">Mail</td>
+                                    <td class="phone">Phone</td>
+                                    <td class="need" style="text-align:center;">Want</td>
+                                    <td class="exp" style="text-align:center;">Driver exp.</td>
+                                    <td class="date" style="text-align:center;">Time</td>
+                                    <td class="act" style="text-align:center;">Actions</td>
                                 </tr>
                             </thead>
                             <tbody>

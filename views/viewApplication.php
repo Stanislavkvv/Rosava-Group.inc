@@ -29,55 +29,59 @@
                     <div class="content__block active" id="applications">
                         <?php $application = ADMIN::getApplicationById($ID);
                             if($application!=null){
-                            var_dump($application);
+                                $application = $application[0];
                         ?>
-                        <h2 class="title">APPLICATIONS ( <?php echo count($applications)?> )</h2>
-                        <table class="table table-hover">
-                            <thead>
-                                <tr>
-                                    <td style="text-align:center;">ID</td>
-                                    <td class="name">Name</td>
-                                    <td class="mail">Mail</td>
-                                    <td class="phone">Phone</td>
-                                    <td class="need" style="text-align:center;">Need</td>
-                                    <td class="exp" style="text-align:center;">Driver exp.</td>
-                                    <td class="date" style="text-align:center;">Date</td>
-                                    <td class="act" style="text-align:center;">Actions</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php
-                                    for ($i=0; $i < count($applications); $i++) { 
-                                ?>  
-                                    <tr>
-                                        <td style="text-align:center;"><?php echo $applications[$i]["App_ID"]?></td>
-                                        <td class="name"><?php echo $applications[$i]["App_Name"]?></td>
-                                        <td class="mail"><a href="mailto:<?php echo $applications[$i]["App_Mail"]?>"><?php echo $applications[$i]["App_Mail"]?></a></td>
-                                        <td class="phone"><a href="tel:<?php echo $applications[$i]["App_Phone"]?>"><?php echo $applications[$i]["App_Phone"]?></a></td>
-                                        <td class="need" style="text-align:center;"><?php echo $applications[$i]["App_Services"]?></td>
-                                        <td class="exp" style="text-align:center;"><?php echo $applications[$i]["App_Driving_Experience"]?></td>
-                                        <td class="date" style="text-align:center;"><?php echo $applications[$i]["App_DateTime"]?></td>
-                                        <td class="act" style="text-align:center;">
-                                            <a href="index.php&action=viewApplication=1"></a>
-                                            <?php if($applications[$i]["App_Checked"]==1){?>
-                                                <img src="img/assets/checked.png" alt="Checked">
-                                            <?php } else { ?>
-                                                <form action="" method="post" class="applicationCheckedForm">
-                                                    <input type="hidden" name="action" value="applications">
-                                                    <input type="hidden" name="check" value="<?php echo $applications[$i]["App_ID"]?>">
-                                                    <input type="hidden" name="isCheck" value="false">
-                                                    <button type="submit">
-                                                        <img src="img/assets/checked.png" alt="Checked">
-                                                    </button>
-                                                </form>
-                                            <?php } ?>
-                                        </td>
-                                    </tr>
-                                <?php
-                                    }
-                                ?>
-                            </tbody>
-                        </table>
+                        <h2 class="title">APPLICATION №<?php echo $ID?></h2>
+                        <div class="applicationAbout">
+                            <div class="applicationAbout__row">
+                                <p>№</p>
+                                <p><?php echo $application["App_ID"]?></p>
+                            </div>
+                            <div class="applicationAbout__row">
+                                <p>Name</p>
+                                <p><?php echo $application["App_Name"]?></p>
+                            </div>
+                            <div class="applicationAbout__row">
+                                <p>Email</p>
+                                <a href="mailto:<?php echo $application["App_Mail"]?>"><?php echo $application["App_Mail"]?></a>
+                            </div>
+                            <div class="applicationAbout__row">
+                                <p>Phone</p>
+                                <a href="tel:<?php echo $application["App_Phone"]?>"><?php echo $application["App_Phone"]?></a>
+                            </div>
+                            <div class="applicationAbout__row">
+                                <p>ZIP Code</p>
+                                <p><?php echo $application["App_Code"]?></p>
+                            </div>
+                            <div class="applicationAbout__row">
+                                <p>Service</p>
+                                <p><?php echo $application["App_Services"]?></p>
+                            </div>
+                            <div class="applicationAbout__row">
+                                <p>Experience</p>
+                                <p><?php echo $application["App_Driving_Experience"]?></p>
+                            </div>
+                            <div class="applicationAbout__row">
+                                <p>Source</p>
+                                <p><?php echo $application["App_HowKnow"]?></p>
+                            </div>
+                            <div class="applicationAbout__row">
+                                <p>Time</p>
+                                <p><?php echo $application["App_DateTime"]?></p>
+                            </div>
+                            <div class="applicationAbout__row submit">
+                                <?php if($application["App_Checked"]==1){?>
+                                    <img src="img/assets/check-box.png" alt="Checked">
+                                <?php } else { ?>
+                                    <form action="" method="post" class="applicationCheckedForm">
+                                        <input type="hidden" name="action" value="applications">
+                                        <input type="hidden" name="check" value="<?php echo $applications[$i]["App_ID"]?>">
+                                        <input type="hidden" name="isCheck" value="false">
+                                        <button type="submit">CHECK</button>
+                                    </form>
+                                <?php } ?>
+                            </div>
+                        </div>
                         <?php
                         } else{
                             ?>
