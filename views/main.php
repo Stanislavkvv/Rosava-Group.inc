@@ -58,9 +58,9 @@
 
                     <select name="services" id="services" required>
                         <option value>I am applying for</option>
-                        <option value="Solo">Solo Driver</option>
-                        <option value="Owner">Owner Operator</option>
-                        <option value="Team">Team Drivers</option>
+                        <option value="Solo Driver">Solo Driver</option>
+                        <option value="Owner Operator">Owner Operator</option>
+                        <option value="Team Drivers">Team Drivers</option>
                     </select>
 
                     <select name="driving_experience" id="driving_experience" required>

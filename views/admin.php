@@ -47,10 +47,19 @@
                         </div>
                     </div>
                     <div class="content__block <?php if(isset($_POST["action"])&&$_POST["action"]=="applications"){ echo 'active';} ?>" id="applications">
-                        <?php $applications = ADMIN::getApplications();
+                        <?php 
+                            if (!isset($_GET['page']) ) {  
+                                $page = 1;  
+                            } else {  
+                                $page = $_GET['page'];  
+                            } 
+                            $results_per_page = 50;  
+                            $page_first_result = ($page-1) * $results_per_page;  
+                            $applications = ADMIN::getApplications($page_first_result,$results_per_page);
+                            $allApplications = ADMIN::getAllApplications();
                             if(count($applications)>0){
                         ?>
-                        <h2 class="title">APPLICATIONS ( <?php echo count($applications)?> )</h2>
+                        <h2 class="title">APPLICATIONS ( <?php echo count($allApplications)?> )</h2>
                         <table class="table table-hover">
                             <thead>
                                 <tr>
@@ -58,7 +67,6 @@
                                     <td class="name">Name</td>
                                     <td class="mail">Mail</td>
                                     <td class="phone">Phone</td>
-                                    <td class="need" style="text-align:center;">Want</td>
                                     <td class="exp" style="text-align:center;">Driver exp.</td>
                                     <td class="date" style="text-align:center;">Time</td>
                                     <td class="act" style="text-align:center;">Actions</td>
@@ -73,9 +81,13 @@
                                         <td class="name"><?php echo $applications[$i]["App_Name"]?></td>
                                         <td class="mail"><a href="mailto:<?php echo $applications[$i]["App_Mail"]?>"><?php echo $applications[$i]["App_Mail"]?></a></td>
                                         <td class="phone"><a href="tel:<?php echo $applications[$i]["App_Phone"]?>"><?php echo $applications[$i]["App_Phone"]?></a></td>
-                                        <td class="need" style="text-align:center;"><?php echo $applications[$i]["App_Services"]?></td>
                                         <td class="exp" style="text-align:center;"><?php echo $applications[$i]["App_Driving_Experience"]?></td>
-                                        <td class="date" style="text-align:center;"><?php echo $applications[$i]["App_DateTime"]?></td>
+                                        <td class="date" style="text-align:center;">
+                                            <?php 
+                                                $date = date_create($applications[$i]["App_DateTime"]);
+                                                echo date_format($date, 'm-d-Y h:i:s A')
+                                            ?>
+                                        </td>
                                         <td class="act" style="text-align:center;">
                                             <a class="view" href="index.php?action=viewApplication&id=<?php echo $applications[$i]["App_ID"]?>"><img src="img/assets/eye.png" alt="View"></a>
                                             <?php if($applications[$i]["App_Checked"]==1){?>
@@ -98,6 +110,38 @@
                             </tbody>
                         </table>
                         <?php
+                            $results = ceil(count($allApplications) / $results_per_page);
+                            if($results>1){
+                            ?>
+                            <div class="paginationBtns">
+                                <?php 
+                                if($page==$results&&$page-2>0){
+                                    ?>
+                                    <button link="index.php?action=admin&view=applications&page=<?php echo $page-2?>"><?php echo $page-2?></button>
+                                    <?php
+                                }
+                                if($page>1){
+                                    ?>
+                                    <button link="index.php?action=admin&view=applications&page=<?php echo $page-1?>"><?php echo $page-1?></button>
+                                    <?php
+                                }   
+                                ?>
+                                <button class="noactive"><?php echo $page?></button>
+                                <?php 
+                                if($page<$results){
+                                    ?>
+                                    <button link="index.php?action=admin&view=applications&page=<?php echo $page+1?>"><?php echo $page+1?></button>
+                                    <?php
+                                }
+                                if($page==1&&$results>2){
+                                    ?>
+                                    <button link="index.php?action=admin&view=applications&page=<?php echo $page+2?>"><?php echo $page+2?></button>
+                                    <?php
+                                }
+                                ?>
+                            </div>
+                            <?php
+                            }
                         } else{
                             ?>
                                 <h2 class="title">YOU DON`T HAVE APPLICATIONS</h2>

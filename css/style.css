@@ -852,6 +852,38 @@ main#admin section.content table{
     border-radius: 10px;
     overflow: hidden;
 }
+main#admin section.content .paginationBtns{
+    margin-top: 3rem;
+    background-color: var(--color-3);
+    border-radius: 10px;
+    display: flex;
+    overflow: hidden;
+}
+main#admin section.content .paginationBtns button{
+    color: var(--color-1);
+    padding: .5rem 1rem;
+    font-family: var(--font-4);
+    text-decoration: none;
+    font-weight: 600;
+    transition: all .5s ease;
+    border: none;
+    background-color: var(--color-3);
+}
+main#admin section.content .paginationBtns button.noactive,
+main#admin section.content .paginationBtns button.noactive:hover{
+    background-color: #ddd;
+}
+main#admin section.content .paginationBtns button.noactive:hover{
+    cursor: default;
+    color: var(--color-1);
+}
+main#admin section.content .paginationBtns button:hover{
+    background-color: var(--color-1);
+    color: var(--color-3);
+}
+main#admin section.content .paginationBtns button:not(:first-child){
+    border-left: .05rem solid #dddddd;
+}
 main#admin section.content table tr:not(:first-child){
     border-top: .05rem solid #e4e4e4;
 }

@@ -16,13 +16,22 @@ allAdminBtns.forEach(item=>{
     })
 })
 
-const adminCheckApplicationBtns = document.querySelectorAll("main#admin section.content table tr td form.applicationCheckedForm button");
+const adminCheckApplicationBtns = document.querySelectorAll("main#admin section.content form.applicationCheckedForm button");
 adminCheckApplicationBtns.forEach(item=>{
     item.addEventListener("click",function(event){
         if (window.confirm("Do you really want to do this?")) {
             this.parentElement.querySelector("input[name='isCheck']").setAttribute("value","true")
         } else {
             this.parentElement.querySelector("input[name='isCheck']").setAttribute("value","false")
+        }
+    })
+})
+
+const paginationBtns = document.querySelectorAll("main#admin section.content .paginationBtns button");
+paginationBtns.forEach(item=>{
+    item.addEventListener("click",function(){
+        if (!item.classList.contains("noactive")) {
+            window.location.href = item.getAttribute("link")
         }
     })
 })

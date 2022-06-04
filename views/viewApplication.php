@@ -1,5 +1,14 @@
 <?php
     if (isset($_SESSION["isAdmin"])&&$_SESSION["isAdmin"]==true){
+        if(!empty($_POST)){
+            if(isset($_POST["action"])){
+                if($_POST["action"]=="applications"){
+                    if(isset($_POST["isCheck"])&&$_POST["isCheck"]=="true"){
+                        ADMIN::CheckApplicationById($_POST["check"]);
+                    }
+                }
+            }
+        }
         ?>
         <main id="admin">
             <div class="container">
@@ -67,7 +76,12 @@
                             </div>
                             <div class="applicationAbout__row">
                                 <p>Time</p>
-                                <p><?php echo $application["App_DateTime"]?></p>
+                                <p>
+                                <?php 
+                                    $date = date_create($application["App_DateTime"]);
+                                    echo date_format($date, 'm-d-Y  h:i:s A')
+                                ?>
+                                </p>
                             </div>
                             <div class="applicationAbout__row submit">
                                 <?php if($application["App_Checked"]==1){?>
@@ -75,8 +89,8 @@
                                 <?php } else { ?>
                                     <form action="" method="post" class="applicationCheckedForm">
                                         <input type="hidden" name="action" value="applications">
-                                        <input type="hidden" name="check" value="<?php echo $applications[$i]["App_ID"]?>">
-                                        <input type="hidden" name="isCheck" value="false">
+                                        <input type="hidden" name="check" value="<?php echo $application["App_ID"]?>">
+                                        <input type="hidden" name="isCheck" value="true">
                                         <button type="submit">CHECK</button>
                                     </form>
                                 <?php } ?>

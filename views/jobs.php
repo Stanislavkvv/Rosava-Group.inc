@@ -132,7 +132,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="applyToDrive">
+                <div class="applyToDrive" id="application">
                     <div class="container">
                         <div class="applyToDrive__photo">
                             <img src="img/assets/aplication.jpg" alt="Application Photo">

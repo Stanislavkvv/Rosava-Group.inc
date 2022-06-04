@@ -1,9 +1,17 @@
 <?php 
 	class ADMIN
 	{
-		public static function getApplications(){
+		public static function getApplications($start,$end){
 			$mysqli = DATABASE::Connect();
-			$sql = "SELECT * FROM `application` ORDER BY `application`.`App_Checked` ASC, `application`.`App_DateTime` ASC";
+			$sql = "SELECT * FROM `application` ORDER BY `application`.`App_Checked` ASC, `application`.`App_DateTime` DESC LIMIT ?,?";
+			$stmt = $mysqli->prepare($sql);
+			$stmt->bind_param("ii",$start,$end);
+			$stmt->execute();
+			return $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+		}
+		public static function getAllApplications(){
+			$mysqli = DATABASE::Connect();
+			$sql = "SELECT * FROM `application`";
 			$stmt = $mysqli->prepare($sql);
 			$stmt->execute();
 			return $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
