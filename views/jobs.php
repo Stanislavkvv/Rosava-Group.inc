@@ -40,7 +40,7 @@
                             ?>
                                 We have high-earning solo driver opportunities. <br>
                                 Better Pay, Home Time, and Miles. <br>
-                                Type of freight you haul: dry van and refrigerated trucks.
+                                Type of freight you haul: dry van.
                             <?php
                             } else if($_GET["type"]=="owner"){
                             ?>
@@ -78,8 +78,8 @@
                             } else if($_GET["type"]=="owner"){
                             ?>
                                 <li>3 Years experience</li>
-                                <li>Clean MVR and Reasonable PSP report.</li>
-                                <li>Dry Van Refrigerated runs.</li>
+                                <li>Clean MVR and Reasonable PSP report</li>
+                                <li>Dry Van</li>
                                 <li>All No Touch Freight… Lots of drop and hook</li>
                                 <li>Hiring in 48 States</li>
                                 <li>Trucks no less than 5 years old</li>
@@ -105,7 +105,6 @@
                             ?>
                                <li>Weekly settlements with direct deposit</li>
                                <li>Up to 70₵ per mile, depending on EXP & Driving history</li>
-                               <li>Monthly safety bonus $1000</li>
                                <li>Healthcare, Dental, Vision and Life Insurance</li>
                             <?php
                             } else if($_GET["type"]=="owner"){
@@ -113,7 +112,6 @@
                                 <li>Weekly settlement with direct deposit</li>
                                 <li>80/20 split on load</li>
                                 <li>Lease to own available</li>
-                                <li>Possibility of earning monthly safety bonus $1,000</li>
                                 <li>Gross income up to $150.000 per year</li>
                                 <li>Dedicated Dispatcher</li>
                                 <li>Healthcare and insurances available</li>
@@ -122,7 +120,6 @@
                             ?>
                                 <li>Weekly settlements with direct deposit</li>
                                 <li>Earn up to $0.86 per mile depending on experience & driving history</li>
-                                <li>Monthly safety bonus $1000</li>
                                 <li>Coast to coast team lanes available</li>
                                 <li>Healthcare, dental, vision and life insurance able</li>
                                 <li>New model trucks (never more than 3 yrs old)</li>
