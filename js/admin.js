@@ -42,7 +42,9 @@ if(document.querySelector("main#admin.admin")){
     const adminPasswordRecoveryHead = document.querySelector("main#admin section.content .content__block__child.passwordRecovery .head");
     const adminPasswordRecoveryInputs = document.querySelectorAll("main#admin section.content .content__block__child.passwordRecovery .passwordRecovery input");
     const adminPersonalSettingsBtn = document.querySelector("main#admin section.content form#personalSettings button");
-    adminPasswordRecoveryShowBtn.addEventListener("click",function(){
+    adminPasswordRecoveryShowBtn.addEventListener("click",adminPasswordRecoveryShowBtnEvent)
+    window.addEventListener("resize",adminPasswordRecoveryShowBtnEvent)
+    function adminPasswordRecoveryShowBtnEvent(){
         if(adminPasswordRecoveryBlock.classList.contains("active")){
             adminPasswordRecoveryBlock.style.bottom = "0";
             adminPasswordRecoveryHead.classList.remove("active")
@@ -62,7 +64,7 @@ if(document.querySelector("main#admin.admin")){
                 item.setAttribute("required","required")
             })
         }
-    })
+    }
     document.addEventListener("DOMContentLoaded",function(){
         if(adminPasswordRecoveryBlock.classList.contains("active")){
             adminPasswordRecoveryHead.classList.add("active")

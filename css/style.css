@@ -22,6 +22,9 @@ body{
     min-height: 100vh;
     overflow-x: hidden;
 }
+body.noScroll{
+    overflow-y: hidden;
+}
 
 main{
     flex: 1 1 auto;
@@ -36,6 +39,9 @@ header{
 header.head{
     background-color: #251D3A;
     padding: .5rem;
+    -webkit-box-shadow: -2px 5px 57px 0px rgba(0, 79, 232, 0.2);
+    -moz-box-shadow: -2px 5px 57px 0px rgba(0, 79, 232, 0.2);
+    box-shadow: -2px 5px 57px 0px rgba(0, 79, 232, 0.2);
 }
 header.head .container{
     display: flex;
@@ -43,6 +49,17 @@ header.head .container{
 }
 header.head .container .logo img{
     width: 10rem;
+}
+header.head .container button.toggle{
+    display: none;
+    align-items: center;
+    background:none;
+    border: none;
+    border-radius: 10px;
+    transition: all .7s ease;
+}
+header.head .container button img{
+    width: 3rem;
 }
 header.head .container ul.contacts{
     display: flex;
@@ -64,7 +81,8 @@ header.head .container ul.contacts li ul.media{
 header.head .container ul.contacts li ul.media li{
     margin-left: .5rem;
 }
-header.head .container ul.contacts li a{
+header.head .container ul.contacts li a,
+section.mobileMenu .container ul.contacts li a{
     text-decoration: none;
     color: var(--color-3);
     transition: all .4s ease;
@@ -87,7 +105,8 @@ header.head .container ul.contacts li button{
 }
 header.head .container ul.contacts li a:hover,
 section.info .container .info ul li a:hover,
-main#admin .buttn:hover{
+main#admin .buttn:hover,
+section.mobileMenu .container ul.contacts li a:hover{
     transform: translate(.2rem,-.2rem);
 }
 header.head .container ul.contacts li button:hover{
@@ -156,6 +175,111 @@ header.body .container ul li a:hover:after{
     right: 0;
 }
 
+section.mobileMenu{
+    position: fixed;
+    left: -100%;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-3);
+    transition: all .7s ease;
+    z-index: 101;
+    display: flex;
+}
+section.mobileMenu.active{
+    left: 0;
+}
+section.mobileMenu .container{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem .5rem;
+    justify-content: center;
+}
+section.mobileMenu .container .close{
+    position: absolute;
+    right: .5rem;
+    top: -150%;
+    background: none;
+    border: none;
+    transition: all .4s ease .5s;
+}
+section.mobileMenu.active .container .close{
+    top: 1rem;
+}
+section.mobileMenu .container ul.nav{
+    padding: 0 0 1rem 2rem;
+    flex-direction: column;
+    border-bottom: .1rem solid #f5f5f5;
+}
+section.mobileMenu .container ul.nav li:not(:first-child),
+section.mobileMenu .container ul.contacts li:not(:first-child){
+    margin-top: 1rem;
+}
+section.mobileMenu .container ul.nav li a{
+    text-decoration: none;
+    color: var(--color-1);
+    font-size: 1.5rem;
+    width: 100%;
+    font-weight: 500;
+}
+section.mobileMenu .container ul.contacts{
+    margin-top:2rem;
+    padding: 0;
+}
+section.mobileMenu .container ul.contacts li{
+    display: flex;
+    justify-content: center;
+    font-size: 2rem;
+}
+section.mobileMenu .container ul.contacts li:not(:first-child){
+    margin-top: 1.5rem;
+}
+section.mobileMenu .container ul.contacts li.login{
+    margin-top: 2rem;
+}
+section.mobileMenu .container ul.contacts li a{
+    color: var(--color-1);
+    display: flex;
+    align-items: center;
+}
+section.mobileMenu .container ul.contacts li img{
+    width: 4rem;
+    margin-right: 1.5rem;
+}
+section.mobileMenu .container ul.contacts li span{
+    margin: 0 1rem;
+}
+section.mobileMenu .container ul.contacts li a.signin,
+section.mobileMenu .container ul.contacts li button{
+    padding: .5rem 2rem;
+    text-decoration: none;
+    background-color: var(--color-6);
+    color: var(--color-3);
+    border-radius: 5px;
+    border: none;
+    font-weight: 500;
+}
+section.mobileMenu .container ul.contacts li button{
+    background-color: red;
+}
+section.mobileMenu .container ul.contacts li.login form button{
+    margin-left: 1rem;
+}
+section.mobileMenu .container ul.contacts li ul.media{
+    display: flex;
+    padding: 0 .5rem;
+}
+section.mobileMenu .container ul.contacts li ul.media li{
+    margin: 0;
+}
+section.mobileMenu .container ul.contacts li ul.media li:first-child{
+    margin-left: 1.5rem;
+}
+section.mobileMenu .container ul.contacts li ul.media li:last-child img{
+    margin: 0;
+}
+
 section.hello{
     background-image: url("../img/title.jpg");
     background-size: cover;
@@ -192,7 +316,7 @@ section.info{
     border-top: .1rem solid #f4f4f4;
 }
 section.info .container{
-    padding: 3rem 0;
+    padding: 3rem 1rem;
     display: flex;
     font-family: var(--font-3);
     justify-content: center;
@@ -209,6 +333,7 @@ section.info .container .map{
 section.info .container .info{
     display: flex;
     flex-direction: column;
+    margin-right: 2rem;
 }
 section.info .container .info ul{
     padding: 0;
@@ -221,6 +346,13 @@ section.info .container .info ul li{
     margin-bottom: 2rem;
     display: flex;
     justify-content: space-between;
+    align-items:flex-start;
+}
+section.info .container .info ul li .phones{
+    display: flex;
+    flex: 1 1 auto;
+    justify-content: space-between;
+    align-items: center;
 }
 section.info .container .info ul li img{
     width: 2.5rem;
@@ -235,6 +367,17 @@ section.info .container .info ul li a{
     align-items: center;
     font-family: var(--font-1);
     transition: all .4s ease;
+}
+section.info .container .map{
+    display: flex;
+    flex-direction: column;
+}
+section.info .container .map .map_block{
+    flex: 1 1 auto;
+}
+section.info .container .map .map_block iframe{
+    height: 100%;
+    width: 100%;
 }
 
 section.services{
@@ -264,7 +407,7 @@ section.services .container .services__service__block{
     grid-gap: .5rem;
 }
 section.services .container .services__service{
-    padding: 8rem 5rem 2rem;
+    padding: 0 0 2rem;
     text-decoration: none;
     font-family: var(--font-3);
     letter-spacing: 1px;
@@ -276,6 +419,7 @@ section.services .container .services__service{
     position: relative;
     transition: all .7s ease;
     overflow: hidden;
+    min-height: 13rem;
 }
 section.services .container .services__service img{
     position: absolute;
@@ -298,7 +442,7 @@ section.services .container .services__service a{
     text-decoration: none;
     font-size: 1rem;
     font-weight: 600;
-    width: 100%;
+    width: 70%;
     text-align: center;
 }
 section.services .container .services__service a:hover{
@@ -318,9 +462,66 @@ section.services .container .services__service p{
     letter-spacing: 0;
 }
 
+section.teamWork{
+    border-top: .1rem solid #f4f4f4;
+    margin: 2rem 0;
+    padding: 2rem 0 0;
+}
+section.teamWork .container{
+    display: flex;
+    padding: 0 3rem;
+}   
+section.teamWork .container .teamWork__photo{
+    display: flex;
+    overflow: hidden;
+    justify-content: center;
+    min-height: 30rem;
+    position: relative;
+}   
+section.teamWork .container .teamWork__photo img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+section.teamWork .container .teamWork__photo,
+section.teamWork .container .teamWork__data{
+    flex: 1;
+}
+section.teamWork .container .teamWork__data{
+    display: flex;
+    font-family: var(--font-3);
+    flex-direction: column;
+    padding: 5rem 5rem 0;
+    color: #333;
+}
+section.teamWork .container .teamWork__data h4{
+    color: rgba(0, 0, 0, 0.4);
+    font-size: .7rem;
+    letter-spacing: 2px;
+    font-weight: 600;
+    margin-bottom: 2rem;
+}
+section.teamWork .container .teamWork__data .slogan1{
+    font-size: calc(1.5rem + 40 * (100vw / 1280));
+    font-weight: 700;
+    margin: 0;
+}
+section.teamWork .container .teamWork__data .slogan2{
+   font-size: calc(1.2rem + 29 * (100vw / 1280));
+   font-weight: 600; 
+   margin-bottom: 3rem;
+}
+section.teamWork .container .teamWork__data p{
+    font-size: 1.1rem;
+    line-height: 2.5rem;
+    font-weight: 400;
+    color: #666;
+}
+
 .applyToDrive{
     margin: 0 0 3rem;
-    padding-top: 1.5rem;
+    padding-top: 3rem;
     border-top: .1rem solid #f4f4f4;
 }
 .applyToDrive .container{
@@ -336,6 +537,7 @@ section.services .container .services__service p{
     font-size: 1.8rem;
     color: #333;
     margin-bottom: 1rem;
+    text-align: center;
 }
 .applyToDrive .container .applyToDrive__form form{
     display: flex;
@@ -531,10 +733,7 @@ section.jobs .container .applyToDrive .container{
 section.jobs .container .applyToDrive .container .applyToDrive__photo{
     margin-right: 0;
     margin-left: 3rem;
-}
-section.jobs .container .applyToDrive .container .applyToDrive__photo img{
-    left: 0;
-    right: unset;
+    overflow: hidden;
 }
 
 main#signIn{
@@ -729,13 +928,16 @@ main#error .container .successBlock .body h2{
     font-family: var(--font-2);
     font-size: 3.5rem;
     letter-spacing: 1px;
+    text-align: center;
 }
 main#error .container .successBlock .body h3{
     font-family: var(--font-4);
+    text-align: center;
 }
 main#error .container .successBlock .body p{
     font-family: var(--font-1);
     margin-top: .5rem;
+    text-align: center;
 }
 
 main#admin{
@@ -793,7 +995,7 @@ main#admin .buttn:hover{
 main#admin .buttn i{
     top: 50%;
     transform: translate(0,-50%);
-    left: 1rem;
+    left: .5rem;
     position: absolute;
     font-size: 1.5rem;
 }
@@ -822,6 +1024,7 @@ main#admin section.content .content__block.active{
 main#admin section.content .content__block .title{
     text-align: center;
     font-size: 3rem;
+    font-size: calc(2rem + (32 + 32*0.7) * ((100vw - 320px) / 1280));
     font-family: var(--font-4);
     font-weight: 400;
     margin: 2rem 0;
@@ -893,6 +1096,7 @@ main#admin section.content table thead tr td{
 }
 main#admin section.content table tr td{
     border-bottom: none;
+    vertical-align: middle;
 }
 main#admin section.content table tr td.act{
     display: flex;
@@ -1066,6 +1270,7 @@ main#admin section.content .content__block__child button img{
 }
 main#admin section.content form#personalSettings a.passwordRecoveryOpen img{
     width: 1.5rem;
+    margin-right: 1rem;
 }
 main#admin section.content .content__block__child input,
 main#admin section.content .content__block__child textarea,
@@ -1247,4 +1452,436 @@ footer .copyRight p{
     text-align: center;
     font-weight: 500;
     color: var(--color-4);
+}
+
+
+@media(max-width:1400px){
+    header.head .container button.toggle{
+        display: flex;
+    }
+    header.head .container ul.contacts{
+        display: none;
+    }
+    section.hello{
+        background-position:50% 100%;
+    }
+    section.teamWork .container .teamWork__data{
+        padding: 1rem 3rem;
+    }
+    section.teamWork .container .teamWork__data h4{
+        margin-bottom: 1rem;
+    }
+    main#admin section.content .btns{
+        width: 50%;
+    }
+    main#admin section.content table thead tr td.exp,
+    main#admin section.content table tr td.exp{
+        display: none;
+    }
+}
+@media(max-width:1200px){
+    footer nav.downMenu .container{
+        display: grid;
+        grid-template-areas: 
+            "logo logo"
+            "links info";
+    }
+    footer nav.downMenu .links{
+        grid-area: links;
+    }
+    footer nav.downMenu .logo{
+        grid-area: logo;
+    }
+    footer nav.downMenu .contacts{
+        grid-area: info;
+    }
+    footer nav.downMenu .links{
+        margin-right: 1rem ;
+    }
+    section.hello .container{
+        margin-top: 2rem;
+    }
+    section.services .container .services__service{
+        min-height: 10rem;
+    }
+    section.services .container .services__service a{
+        padding: 1rem 0;
+    }
+    section.teamWork .container .teamWork__data p{
+        line-height: unset;
+    }
+    section.teamWork .container .teamWork__data .slogan2{
+        margin-bottom: 1rem;
+    }
+    section.jobs .container .applyToDrive .container .applyToDrive__photo img{
+        right: -5rem;
+        left: unset;
+    }
+    main#admin section.content table thead tr td.date,
+    main#admin section.content table tr td.date{
+        display: none;
+    }
+}
+@media(min-width:1000px) and (max-width:1200px){
+    footer nav.downMenu .logo{
+        flex-direction: row;
+    }
+    footer nav.downMenu .logo p{
+        margin: 0 0 0 2rem;
+        display: flex;
+        align-items: center;
+    }
+}
+@media(min-width:992px) and (max-width:1200px){
+    section.teamWork .container .teamWork__photo img{
+        top: 50%;
+        transform: translate(0,-50%);
+    }
+}
+@media(max-width:992px){
+    section.services .container .services__service{
+        min-height: 15rem;
+    }
+    section.services .container .services__service img{
+        height: unset;
+        width: 100%;
+    }
+    section.teamWork .container {
+        flex-direction: column;
+    }
+    section.teamWork .container .teamWork__data{
+        padding: 2rem;
+    }
+    section.teamWork .container .teamWork__data h4{
+        margin-bottom: 1rem;
+    }
+    section.teamWork .container .teamWork__data .slogan2{
+        margin-bottom: 1.5rem;
+    }
+    section.teamWork .container{
+        padding: 0 1.5rem;
+    }
+    section.teamWork .container .teamWork__data p{
+        font-size: calc(.8rem + 18 * (100vw / 1280));
+    }
+    .applyToDrive .container{
+        flex-direction: column;
+    }
+    .applyToDrive .container .applyToDrive__form h2{
+        text-align: center;
+    }
+    section.jobs .container .hello{
+        flex-direction: column;
+        height: unset;
+    }
+    section.jobs .container .hello .info .title{
+        margin: 0;
+    }
+    section.jobs .container .hello .info .desc,
+    section.jobs .container .hello .info a{
+        margin-top: 1rem;
+    }
+    section.jobs .container .hello .photo{
+        margin-top: 1rem;
+    }
+    section.jobs .container .hello .photo img{
+        position: unset;
+        transform: unset;
+        height: unset;
+        width: 100%;
+    }
+    .applyToDrive .container .applyToDrive__photo{
+        display: none;
+    }
+    section.jobs .container .hello .info{
+        margin: 0;
+    }
+    section.jobs .container .need{
+        flex-direction: column;
+    }
+    section.jobs .container .need .benefits{
+        margin-left: 0;
+        padding: 2rem 1rem 0;
+    }
+    main#admin .container{
+        flex-direction: column;
+    }
+    main#admin aside{
+        margin-bottom: 0;
+        border-radius: 10px 10px 0 0;
+    }
+    main#admin section.content{
+        margin-top: 0;
+        border-radius: 0 0 10px 10px;
+    }
+    main#admin section.content .btns{
+        display: none;
+    }
+}
+@media(min-width:768px) and (max-width:992px){
+    section.services .container .services__service__block{
+        display: grid;
+        grid-template-columns: unset;
+        grid-template-areas: 
+                            "f s"
+                            "t t";
+    }
+    section.services .container .services__service__block .services__service:first-child{
+        grid-area: f;
+        width: 100%;
+    }
+    section.services .container .services__service__block .services__service:not(:last-child):not(:first-child){
+        grid-area: s;
+        width: 100%;
+    }
+    section.services .container .services__service__block .services__service:first-child img,
+    section.services .container .services__service__block .services__service:not(:last-child):not(:first-child) img{
+        height: 100%;
+        width: unset;
+    }
+    section.services .container .services__service__block .services__service:not(:last-child):not(:first-child) img{
+        left: -25%;
+    }
+    section.services .container .services__service__block .services__service:last-child{
+        grid-area: t;
+        margin-top: 0;
+    }
+    section.info .container .info ul li .phones{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+@media(min-width:1200px) and (max-width:1400px){
+    section.services .container .services__service{
+        min-height: 12rem;
+    }
+}
+@media(min-width:1000px) and (max-width:1400px){
+    section.services .container .services__service:not(:first-child) img{
+        width: unset;
+        height: 100%;
+    }
+}
+@media(min-width:1400px){
+    section.mobileMenu{
+        display: none;
+    }
+    section.teamWork .container .teamWork__data .slogan1,
+    main#admin section.content .content__block .title{
+        font-size: 4rem;
+    }
+    section.teamWork .container .teamWork__data .slogan2{
+        font-size: 3rem;
+    }
+}
+@media(min-width:768px){
+    section.mobileMenu .container ul.nav{
+        display: none;
+    }
+}
+@media(max-width:768px){
+    header.body,
+    section.mobileMenu .container ul.contacts li.phones,
+    section.mobileMenu .container ul.contacts li.mail{
+        display: none;
+    }
+    header.head{
+        top: 0;
+        position: sticky;
+        width: 100%;
+    }
+    footer nav.downMenu .container{
+        grid-template-areas: 
+            "logo"
+            "links"
+            "info";
+    }
+    section.hello{
+        background-position:90% 100%;
+    }
+    section.services .container .services__service__block{
+        display: flex;
+        flex-direction: column;
+    }
+    section.services .container .services__service{
+        margin-top: .5rem;
+    }
+    section.teamWork .container .teamWork__data .slogan1{
+        font-size: calc(1.5rem + (40 + 40*0.7) * ((100vw - 320px) / 1280));
+    }
+    section.teamWork .container .teamWork__data .slogan2{
+        font-size: calc(1.2rem + (29 + 29*0.7) * ((100vw - 320px) / 1280));
+    }
+    section.teamWork .container .teamWork__data p{
+        font-size: calc(.8rem + (18 + 18*0.7) * ((100vw - 320px) / 1280));
+        line-height:unset;
+    }
+    section.info .container{
+        flex-direction: column;
+    }
+    section.jobs .container .hello .info .title{
+        font-size: calc(2rem + (32 + 32*0.7) * ((100vw - 320px) / 1280));
+    }
+    section.jobs .container .applyToDrive{
+        padding-top: 1rem;
+    }
+    main#admin section.content table thead tr td.mail,
+    main#admin section.content table tr td.mail{
+        display: none;
+    }
+    main#admin section.content .content__block__child.passwordRecovery .passwordRecovery .inputBlock .input{
+        width: calc(100% - 2rem);
+    }
+    main#admin section.content .content__block__child.passwordRecovery .passwordRecovery .inputBlock p{
+        align-items: center;
+    }
+}
+@media(max-width:576px){
+    section.teamWork .container .teamWork__photo{
+        min-height: 50vh;
+    }
+    section.teamWork .container .teamWork__data{
+        padding-left: 1rem;
+    }
+    section.info .container .info ul li .phones{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    section.jobs .container .hello .info .title{
+        margin-top: 1.5rem
+    }
+    main#admin section.content .content__block__child{
+        flex-direction: column;
+    }
+    main#admin section.content .content__block__child p{
+        margin-bottom: 1rem;
+    }
+    main#admin section.content .content__block__child input, main#admin section.content .content__block__child textarea{
+        width: 100%;
+    }
+    main#admin section.content .content__block__child.passwordRecovery .head,
+    main#admin section.content .content__block__child.passwordRecovery .passwordRecovery .inputBlock{
+        flex-direction: column;
+        align-items: center;
+    }
+    main#admin section.content form#personalSettings a.passwordRecoveryOpen{
+        width: 100%;
+        margin-top: 1rem;
+    }
+}
+@media(max-width:480px){
+    section.mobileMenu .container ul.contacts li.login{
+        flex-direction: column;
+        align-items: center;
+    }
+    section.mobileMenu .container ul.contacts li.login form button{
+        margin-left: 0;
+        margin-top: 1rem;
+    }
+    section.mobileMenu .container ul.contacts li{
+        font-size: 1.5rem;
+    }
+    section.mobileMenu .container ul.contacts li ul.media{
+        padding: 0;
+    }
+    section.mobileMenu .container ul.contacts li ul.media li a img{
+        width: 3rem;
+    }
+    section.hello .container h1{
+        font-size: 3rem;
+    }
+    section.hello .container h2{
+        font-size: 2rem;
+        margin-top: 3rem;
+    }
+    section.services .container .services__service{
+        min-height: 10rem;
+        padding: 0 0 1rem;
+    }
+    section.services .container h3{
+        font-size: 1rem;
+    }
+    section.services .container h1{
+        margin-bottom: .5rem;
+    }
+    section.services .container{
+        padding-top: 2rem;
+    }
+    section.teamWork .container .teamWork__photo img{
+        position: unset;
+    }
+    section.jobs .container{
+        padding: .5rem;
+    }
+    section.jobs .container .need{
+        margin-top: 2.5rem;
+        margin-bottom: 0;
+    }
+    section.jobs .container .need .requirements .title{
+        font-size: calc(2rem + (32 + 32*0.7) * ((100vw - 320px) / 1280));
+    }
+    section.jobs .container .need .benefits .title{
+        font-size: calc(2rem + (32 + 32*0.7) * ((100vw - 320px) / 1280));
+    }
+    section.jobs .container .need .benefits, 
+    section.jobs .container .need .requirements{
+        padding: 1.5rem 1rem;
+    }
+    section.jobs .container .need .benefits ul{
+        padding-left: 1rem;
+    }
+    section.teamWork{
+        margin-bottom: 0;
+    }
+    main#signIn .container form input{
+        width: 100%;
+    }
+    main#admin section.content table tr td.phone,
+    main#admin section.content table thead tr td.phone{
+        display: none;
+    }
+    main#admin section.content .applicationAbout .applicationAbout__row{
+        flex-direction: column;
+    }
+    main#admin section.content .applicationAbout .applicationAbout__row a,
+    main#admin section.content .applicationAbout .applicationAbout__row p:last-child{
+        margin: 0;
+    }
+    main#admin section.content .applicationAbout .applicationAbout__row p:last-child{
+        text-align: center;
+    }
+}
+@media(max-width:600px){
+    footer nav.downMenu .logo a img{
+        width: 100%;
+    }
+}
+@media(max-width:320px){
+    footer nav.downMenu .links ul li a, 
+    footer nav.downMenu .contacts ul li a{
+        font-size: 1rem;
+    }
+    section.services .container .services__service{
+        min-height: 8rem;
+    }
+    main#admin section.content .applicationAbout .applicationAbout__row a,
+    main#admin section.content .applicationAbout .applicationAbout__row p:last-child{
+        font-size: 1rem;
+    }
+}
+@media(max-width:350px){
+    section.info .container .info ul li a{
+        font-size: 1rem;
+    }
+    section.info .container .info ul li img{
+        width: 1.5rem;
+        margin-right: 1rem;
+    }
+    section.jobs .container{
+        padding: .2rem;
+    }
+    main.message .container .successBlock .body a{
+        width: unset;
+        padding: .5rem 1.5rem;
+    }
 }

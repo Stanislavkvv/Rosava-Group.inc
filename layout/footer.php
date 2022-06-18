@@ -7,7 +7,7 @@
                 <li><a href="index.php">Home</a></li>
                 <li><a href="index.php#about">About Us</a></li>
                 <li><a href="index.php#services">Our Services</a></li>
-                <li><a href="#">Why Choose us</a></li>
+                <li><a href="index.php#whyWe">Why Choose us</a></li>
                 <li><a href="index.php#info">Locations</a></li>
                 <li><a href="index.php#info">Contacts</a></li>
                 </ul>

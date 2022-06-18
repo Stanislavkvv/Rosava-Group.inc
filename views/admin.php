@@ -39,7 +39,7 @@
                     <div class="content__block <?php if(empty($_POST["action"])){ echo 'active';} ?>" id="getStarted">
                         <h2 class="title">GET STARTED!</h2>
                         <h3>Now, you are ADMIN , and you can <br> see applications and change site settings!</h3>
-                        <p>For navigate, click on any button below, or find button on left menu.</p>
+                        <p>For navigate, click on any button.</p>
                         <div class="btns">
                             <button class="buttn" action="applications"><i class='bx bx-notepad'></i>Applications</button>
                             <button class="buttn" action="settings"><i class='bx bx-cog'></i>Site Settings</button>
@@ -59,7 +59,7 @@
                             $allApplications = ADMIN::getAllApplications();
                             if(count($applications)>0){
                         ?>
-                        <h2 class="title">APPLICATIONS ( <?php echo count($allApplications)?> )</h2>
+                        <h2 class="title">APPLICATIONS</h2>
                         <table class="table table-hover">
                             <thead>
                                 <tr>
@@ -152,7 +152,7 @@
                     <div class="content__block <?php if(isset($_POST["action"])&&$_POST["action"]=="settings"){ echo 'active';} ?>" id="settings">
                         <?php $settings = ADMIN::GetSettings();?>
                         <h2 class="title">SITE SETTINGS</h2>
-                        <form action="" method="post" id="settingsForm">
+                        <form action="index.php?action=admin" method="post" id="settingsForm">
                             <input type="hidden" name="action" value="settings">
                             <div class="content__block__child">
                                 <p><img src="img/assets/phone.png" alt="Phone">Phone Number 1</p>

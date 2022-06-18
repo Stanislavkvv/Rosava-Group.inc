@@ -38,6 +38,19 @@
             </div>
         </div>
     </section>
+    <section class="teamWork" id="whyWe">
+        <div class="container">
+            <div class="teamWork__photo"><img src="img/assets/driver.jpg" alt="Team Work Photo"></div>
+            <div class="teamWork__data">
+                <h4 class="title">TEAM WORK</h4>
+                <h5 class="slogan1">WORK AS ONE</h5>
+                <h6 class="slogan2">EVERY GEAR COUNTS</h6>
+                <p>Each week, GTS looks to its truck drivers to nominate a best driver of the week. GTS offers opportunities for drivers to earn an <strong> additional $1,000 each month with safe driver reward programs.
+                    At the end of the year one lucky driver will win a family vacation to sunny FL! </strong>
+                    We recognize our drivers for their dedication to the profession and an excellent driving record!</p>
+            </div>
+        </div>
+    </section>
     <section class="applyToDrive" id="applyToDrive">
         <div class="container">
             <div class="applyToDrive__photo">
@@ -94,12 +107,14 @@
                 <ul>
                     <li>
                         <img src="img/assets/phone.png" alt="Phone">
-                        <?php 
-                            $phones = CONFIG::getPhone();
-                            for ($i=0; $i < count($phones); $i++) { 
-                                ?><a href="tel:<?php echo $phones[$i]["config_value"]?>"><?php echo CONFIG::getFormatPhone($phones[$i]["config_value"])?></a><?php
-                            }
-                        ?>
+                        <div class="phones">
+                            <?php 
+                                $phones = CONFIG::getPhone();
+                                for ($i=0; $i < count($phones); $i++) { 
+                                    ?><a href="tel:<?php echo $phones[$i]["config_value"]?>"><?php echo CONFIG::getFormatPhone($phones[$i]["config_value"])?></a><?php
+                                }
+                            ?>
+                        </div>
                     </li>
                     <li>
                         <img src="img/assets/fax.png" alt="Fax">
@@ -113,7 +128,9 @@
             </div>
             <div class="map">
                 <h2 class="title">Our Office Here</h2>
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2966.7724141028566!2d-87.87601708469116!3d41.96222317921562!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fb5ea63a4dc5f%3A0xa4a4878460848b5d!2s4612%20Hirschberg%20Ave%2C%20Schiller%20Park%2C%20IL%2060176%2C%20USA!5e0!3m2!1sen!2sua!4v1653552812106!5m2!1sen!2sua" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <div class="map_block">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2966.7724141028566!2d-87.87601708469116!3d41.96222317921562!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fb5ea63a4dc5f%3A0xa4a4878460848b5d!2s4612%20Hirschberg%20Ave%2C%20Schiller%20Park%2C%20IL%2060176%2C%20USA!5e0!3m2!1sen!2sua!4v1653552812106!5m2!1sen!2sua" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
             </div>
         </div>
     </section>

@@ -19,3 +19,24 @@ function formApplicationSubmit(event){
         localStorage.removeItem('applicationEndTime')
     }
 }
+
+//header menu animations
+const headerToggleBtn = document.querySelector("header.head .container button.toggle")
+headerToggleBtn.addEventListener("click",function(){
+    document.querySelector(".mobileMenu").classList.add("active")
+    document.body.classList.add("noScroll")
+})
+const mobileMenuCloseBtn = document.querySelector(".mobileMenu .container .close")
+mobileMenuCloseBtn.addEventListener("click",function(){
+    this.parentElement.parentElement.classList.remove("active")
+    document.body.classList.remove("noScroll")
+})
+
+const infoBlock = document.querySelector("section.info")
+if(infoBlock){
+    checkMainMap()
+}
+function checkMainMap(){
+    const infoHeight = infoBlock.querySelector("section.info .container .info").offsetHeight
+    infoBlock.querySelector("section.info .container .map .map_block").style.height = `${infoHeight}px`
+}
