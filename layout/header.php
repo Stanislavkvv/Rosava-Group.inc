@@ -93,7 +93,7 @@
                         $phones = CONFIG::getPhone();
                         for ($i=0; $i < count($phones); $i++) { 
                             if($i==0){
-                                ?><a target="_blank" href="tel:<?php echo $phones[$i]["config_value"]?>"><?php echo CONFIG::getFormatPhone($phones[$i]["config_value"])?></a><?php
+                                ?><a target="_" href="tel:<?php echo $phones[$i]["config_value"]?>"><?php echo CONFIG::getFormatPhone($phones[$i]["config_value"])?></a><?php
                             } else {
                                 ?><span>|</span><a target="_blank" href="tel:<?php echo $phones[$i]["config_value"]?>"><?php echo CONFIG::getFormatPhone($phones[$i]["config_value"])?></a><?php
                             }
