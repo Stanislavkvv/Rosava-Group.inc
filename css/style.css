@@ -481,8 +481,8 @@ section.teamWork .container .teamWork__photo{
 section.teamWork .container .teamWork__photo img{
     position: absolute;
     top: 0;
-    left: 0;
-    width: 100%;
+    right: 0;
+    height: 100%;
 }
 section.teamWork .container .teamWork__photo,
 section.teamWork .container .teamWork__data{
@@ -1619,6 +1619,10 @@ footer .copyRight p{
     }
 }
 @media(min-width:768px) and (max-width:992px){
+    section.teamWork .container .teamWork__photo img{
+        width: 100%;
+        height: unset;
+    }
     section.services .container .services__service__block{
         display: grid;
         grid-template-columns: unset;
@@ -1740,6 +1744,11 @@ footer .copyRight p{
     section.teamWork .container .teamWork__photo{
         min-height: 50vh;
     }
+    section.teamWork .container .teamWork__photo img{
+        height: 100%;
+        top: unset;
+        bottom: 0;
+    }
     section.teamWork .container .teamWork__data{
         padding-left: 1rem;
     }
@@ -1806,9 +1815,6 @@ footer .copyRight p{
     }
     section.services .container{
         padding-top: 2rem;
-    }
-    section.teamWork .container .teamWork__photo img{
-        position: unset;
     }
     section.jobs .container{
         padding: .5rem;
